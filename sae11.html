@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAÉ11 - Portfolio RT</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Portfolio
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">Présentation</a></li>
+            <li><a href="sae.html">Projets</a></li>
+            <li><a href="#">Bilan de compétences</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HEADER -->
+
+    <section class="project-header">
+
+        <div class="project-overlay"></div>
+
+        <img src="images/sae11.jpg" alt="SAE11">
+
+        <div class="project-header-content">
+
+            <h1>SAÉ11</h1>
+
+            <p>
+                Sensibilisation à l’hygiène informatique et à la cybersécurité
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENU -->
+
+    <section class="project-content">
+
+        <!-- INTRO -->
+
+        <div class="content-box">
+
+            <h2>Introduction</h2>
+
+            <p>
+                Dans le cadre de la SAÉ 1.01 « Se sensibiliser à l’hygiène informatique
+                et à la cybersécurité », j’ai travaillé sur le lot B portant sur les accès SSH.
+            </p>
+
+            <p>
+                L’objectif de ce travail était de comprendre le fonctionnement du protocole SSH,
+                d’étudier les mécanismes de chiffrement et de mettre en place différentes
+                méthodes permettant de sécuriser un accès distant sur une machine Linux.
+            </p>
+
+        </div>
+
+        <!-- TRAVAIL REALISE -->
+
+        <div class="content-box">
+
+            <h2>Travail réalisé</h2>
+
+            <p>
+                Durant cette SAE, j’ai installé et configuré un serveur OpenSSH
+                sur une machine Debian.
+            </p>
+
+            <p>
+                J’ai ensuite testé la connexion distante entre deux machines afin
+                de vérifier le bon fonctionnement du service SSH.
+            </p>
+
+            <p>
+                Afin de renforcer la sécurité, plusieurs mesures ont été mises en place :
+            </p>
+
+            <ul>
+
+                <li>Modification du port par défaut</li>
+
+                <li>Utilisation d’une clé publique/privée RSA</li>
+
+                <li>Sécurisation des permissions des clés</li>
+
+                <li>Vérification du statut du service SSH</li>
+
+            </ul>
+
+        </div>
+
+        <!-- PROBLEME -->
+
+        <div class="content-box">
+
+            <h2>Problème rencontré</h2>
+
+            <p>
+                Après avoir installé et testé le serveur OpenSSH,
+                j’ai souhaité modifier le port SSH par défaut afin de limiter
+                les tentatives d’attaques automatisées ciblant le port 22.
+            </p>
+
+        </div>
+
+        <!-- ETAPE 1 -->
+
+        <div class="content-box">
+
+            <h2>Étape 1 — Modification du port SSH</h2>
+
+            <p>
+                Pour commencer, j’ai ouvert le fichier de configuration du service SSH :
+            </p>
+
+            <div class="code-box">
+                sudo nano /etc/ssh/sshd_config
+            </div>
+
+            <p>
+                J’ai ensuite modifié le port par défaut 22 afin d’utiliser le port 2222.
+            </p>
+
+            <img src="images/ssh1.png" class="project-image">
+
+            <img src="images/ssh2.png" class="project-image">
+
+        </div>
+
+        <!-- ETAPE 2 -->
+
+        <div class="content-box">
+
+            <h2>Étape 2 — Redémarrage du service SSH</h2>
+
+            <p>
+                Après avoir enregistré les modifications du fichier de configuration,
+                j’ai redémarré le service SSH afin d’appliquer les nouveaux paramètres.
+            </p>
+
+            <div class="code-box">
+                sudo systemctl restart ssh
+            </div>
+
+        </div>
+
+        <!-- ETAPE 3 -->
+
+        <div class="content-box">
+
+            <h2>Étape 3 — Apparition du problème</h2>
+
+            <p>
+                Après le redémarrage du service, j’ai tenté d’établir une connexion SSH
+                avec la commande habituelle.
+            </p>
+
+            <div class="code-box">
+                ssh utilisateur@adresse_ip
+            </div>
+
+            <p>
+                Cependant, la connexion échouait avec le message :
+                <strong>Connection refused</strong>.
+            </p>
+
+            <img src="images/ssh3.png" class="project-image">
+
+        </div>
+
+        <!-- ANALYSE -->
+
+        <div class="content-box">
+
+            <h2>Analyse du problème</h2>
+
+            <p>
+                Après réflexion, j’ai compris que le client SSH essayait toujours
+                de se connecter sur le port 22 par défaut, alors que le serveur
+                utilisait désormais le port 2222.
+            </p>
+
+            <p>
+                Le problème ne venait donc pas du service SSH lui-même,
+                mais du port utilisé lors de la connexion.
+            </p>
+
+        </div>
+
+        <!-- RESOLUTION -->
+
+        <div class="content-box">
+
+            <h2>Résolution du problème</h2>
+
+            <p>
+                Pour corriger ce problème, j’ai utilisé l’option -p afin
+                de préciser manuellement le nouveau port :
+            </p>
+
+            <div class="code-box">
+                ssh -p 2222 utilisateur@adresse_ip
+            </div>
+
+            <p>
+                La connexion distante a ensuite fonctionné correctement.
+            </p>
+
+            <img src="images/ssh4.png" class="project-image">
+
+        </div>
+
+        <!-- CE QUE JAI APPRIS -->
+
+        <div class="content-box">
+
+            <h2>Ce que cette situation m’a appris</h2>
+
+            <ul>
+
+                <li>Le fonctionnement des ports réseau</li>
+
+                <li>La configuration du service SSH</li>
+
+                <li>L’impact d’un changement de configuration</li>
+
+                <li>Les bonnes pratiques de sécurisation SSH</li>
+
+                <li>L’analyse et la résolution d’erreurs réseau</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
