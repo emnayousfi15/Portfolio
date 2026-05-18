@@ -812,3 +812,147 @@ justify-content: space-between;
     font-size: 70px;
     font-weight: bold;
 }
+
+/* ========================= */
+/* SAE14 */
+/* ========================= */
+
+.hero-sae14 {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+    url("images/sae14.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.hero-content-sae14 {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+.hero-content-sae14 h1 {
+    font-size: 110px;
+    font-weight: bold;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+.hero-content-sae14 p {
+    font-size: 38px;
+    color: white;
+}
+
+.sae14-detail {
+    width: 85%;
+    margin: auto;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.bloc-sae14 {
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 30px;
+
+    padding: 50px;
+
+    margin-bottom: 70px;
+
+    box-shadow: 0 0 35px rgba(168,85,247,0.15);
+}
+
+.bloc-sae14 h2 {
+    font-size: 42px;
+
+    color: #a855f7;
+
+    margin-bottom: 35px;
+}
+
+.bloc-sae14 h3 {
+    font-size: 30px;
+
+    color: white;
+
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.bloc-sae14 p {
+    font-size: 22px;
+
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+
+    color: #e5e5e5;
+}
+
+.commande {
+    background: #090909;
+
+    border-left: 5px solid #a855f7;
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    font-size: 20px;
+
+    font-family: monospace;
+
+    color: #d8b4fe;
+}
+
+.figure {
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: white;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.image-sae14 {
+    width: 100%;
+
+    border-radius: 20px;
+
+    margin-bottom: 35px;
+
+    border: 2px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s;
+}
+
+.image-sae14:hover {
+    transform: scale(1.01);
+
+    box-shadow: 0 0 30px rgba(168,85,247,0.45);
+}
