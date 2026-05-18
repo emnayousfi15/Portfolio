@@ -47,7 +47,7 @@
 
         <div class="project-header-content">
 
-            <h1>SAÉ11</h1>
+            <h1>SAÉ 1.01</h1>
 
             <p>
                 Sensibilisation à l’hygiène informatique et à la cybersécurité
@@ -146,9 +146,31 @@
                 J’ai ensuite modifié le port par défaut 22 afin d’utiliser le port 2222.
             </p>
 
-            <img src="images/ssh1.png" class="project-image">
+          <p>
+Dans ce fichier, j’ai recherché la ligne suivante : #Port 22
+</p>
 
-            <img src="images/ssh2.png" class="project-image">
+<p>
+Je l’ai ensuite modifiée afin d’utiliser le port 2222 :
+</p>
+
+<p>
+avant modification :
+</p>
+
+<p class="figure-text">
+Figure 1 — Configuration SSH avant modification du port dans le fichier sshd_config.
+</p>
+
+<img src="images/ssh1.png" class="project-image">
+
+<p class="figure-text">
+Figure 1.1 — Configuration SSH après modification du port dans le fichier sshd_config.
+</p>
+
+<img src="images/ssh2.png" class="project-image">
+<p>Cette modification permet d’éviter l’utilisation du port SSH par défaut,
+     souvent ciblé par des attaques automatisées.</p>
 
         </div>
 
@@ -191,6 +213,9 @@
 
             <img src="images/ssh3.png" class="project-image">
 
+            <p>Figure 2 — Erreur “Connection refused”
+                 lors de la tentative de connexion sur le port 22.</p>
+
         </div>
 
         <!-- ANALYSE -->
@@ -203,6 +228,7 @@
                 Après réflexion, j’ai compris que le client SSH essayait toujours
                 de se connecter sur le port 22 par défaut, alors que le serveur
                 utilisait désormais le port 2222.
+                suite à la modification effectuée dans le fichier sshd_config.
             </p>
 
             <p>
@@ -231,7 +257,11 @@
                 La connexion distante a ensuite fonctionné correctement.
             </p>
 
+            <p>Figure 3 — Connexion SSH réussie après utilisation du port 2222.</p>
+
             <img src="images/ssh4.png" class="project-image">
+            <p>Il suffit ensuite de saisir le mot de passe de
+                 l’utilisateur pour établir la connexion SSH.</p>
 
         </div>
 

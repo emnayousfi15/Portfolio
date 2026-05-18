@@ -423,6 +423,28 @@ justify-content: space-between;
 
     gap: 40px;
 }
+.project-content p {
+
+    font-size: 22px;
+
+    line-height: 1.9;
+
+    font-weight: 500;
+}
+
+.project-content li {
+
+    font-size: 22px;
+
+    line-height: 1.9;
+}
+
+.project-content h2 {
+
+    font-size: 48px;
+
+    font-weight: 700;
+}
 
 .content-box {
 
@@ -491,3 +513,30 @@ justify-content: space-between;
 
     overflow-x: auto;
 }
+
+.figure-text {
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    color: #d1d1d1;
+
+    font-size: 15px;
+
+    font-style: italic;
+}
+
+.figure-text {
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    font-style: italic;
+}
+

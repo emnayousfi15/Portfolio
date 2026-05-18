@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SAÉ12 - Réseaux informatiques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-sae">
+
+<header>
+    <nav>
+        <h1 class="logo">Portfolio</h1>
+
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#presentation">Présentation</a></li>
+            <li><a href="sae.html">Projets</a></li>
+            <li><a href="index.html#competences">Bilan de Compétences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="sae-detail">
+
+    <h1 class="titre-sae">SAÉ12 — S’initier aux réseaux informatiques</h1>
+
+    <p class="intro-sae">
+        Cette SAÉ présente différentes situations de dépannage réseau réalisées sous Debian,
+        notamment autour des services DHCP et Apache.
+    </p>
+
+    <!-- PROBLEME DHCP -->
+
+    <div class="bloc-sae">
+
+        <h2>Problème 1 — Le poste client ne recevait plus d’adresse IP automatiquement</h2>
+
+        <h3>🔹 Introduction</h3>
+
+        <p>
+            Dans le cadre de la SAE12, j’ai mis en place un serveur DHCP sur une machine Debian afin de distribuer automatiquement des adresses IP aux postes du réseau.
+            Cette configuration permet de simplifier l’administration du réseau et d’éviter une configuration manuelle des machines clientes.
+        </p>
+
+        <p>
+            Après avoir configuré le serveur DHCP ainsi que le poste client, j’ai réalisé plusieurs tests réseau afin de vérifier le bon fonctionnement de l’attribution automatique des adresses IP.
+        </p>
+
+        <h3>🔹 Apparition du problème</h3>
+
+        <p>
+            Lors des tests de connexion, le poste client ne recevait plus d’adresse IP automatiquement depuis le serveur DHCP.
+        </p>
+
+        <p>
+            Après vérification avec la commande suivante :
+        </p>
+
+        <div class="commande">
+            ip a
+        </div>
+
+        <p>
+            aucune adresse IP valide n’était attribuée à l’interface réseau du client.
+        </p>
+
+        <p class="figure">
+            Figure 1 — Absence d’adresse IP sur le poste client.
+        </p>
+
+        <img src="images/dhcp1.png" class="image-sae">
+
+        <p>
+            Cette situation indiquait que le client ne parvenait plus à communiquer correctement avec le serveur DHCP.
+        </p>
+
+        <h3>🔹 Analyse du problème</h3>
+
+        <p>
+            Après plusieurs vérifications sur le serveur Debian, j’ai constaté que le service DHCP était arrêté.
+        </p>
+
+        <p>La commande suivante :</p>
+
+        <div class="commande">
+            systemctl status isc-dhcp-server
+        </div>
+
+        <p>affichait l’état :</p>
+
+        <div class="commande">
+            inactive (dead)
+        </div>
+
+        <p class="figure">
+            Figure 2 — Service isc-dhcp-server arrêté sur le serveur Debian.
+        </p>
+
+        <img src="images/dhcp2.png" class="image-sae">
+
+        <p>
+            Le problème ne provenait donc pas du poste client, mais du serveur DHCP qui ne distribuait plus les paramètres réseau.
+        </p>
+
+        <h3>🔹 Résolution du problème</h3>
+
+        <p>
+            Pour corriger cette erreur, j’ai modifié le fichier suivant :
+        </p>
+
+        <div class="commande">
+            /etc/default/isc-dhcp-server
+        </div>
+
+        <p>
+            Puis j’ai configuré l’interface réseau utilisée par le serveur DHCP :
+        </p>
+
+        <div class="commande">
+            INTERFACESv4="eth0"
+        </div>
+
+        <p class="figure">
+            Figure 3 — Configuration de l’interface réseau du serveur DHCP.
+        </p>
+
+        <img src="images/dhcp3.png" class="image-sae">
+
+        <p>
+            J’ai ensuite vérifié et complété la configuration du fichier DHCP :
+        </p>
+
+        <div class="commande">
+            /etc/dhcp/dhcpd.conf
+        </div>
+
+        <p>
+            en ajoutant le sous-réseau, la plage d’adresses IP ainsi que la passerelle par défaut.
+        </p>
+
+        <p class="figure">
+            Figure 4 — Configuration du fichier dhcpd.conf.
+        </p>
+
+        <img src="images/dhcp4.png" class="image-sae">
+
+        <p>
+            Après cette correction, j’ai redémarré le service DHCP :
+        </p>
+
+        <div class="commande">
+            sudo systemctl restart isc-dhcp-server
+        </div>
+
+        <p>
+            Puis j’ai vérifié son état :
+        </p>
+
+        <div class="commande">
+            systemctl status isc-dhcp-server
+        </div>
+
+        <p>Le service affichait désormais :</p>
+
+        <div class="commande">
+            active (running)
+        </div>
+
+        <p class="figure">
+            Figure 5 — Service DHCP actif après correction.
+        </p>
+
+        <img src="images/dhcp5.png" class="image-sae">
+
+        <p>
+            Après renouvellement de la configuration réseau du poste client, celui-ci a correctement reçu une adresse IP dynamique depuis le serveur DHCP.
+        </p>
+
+        <p class="figure">
+            Figure 6 — Attribution correcte d’une adresse IP au poste client.
+        </p>
+
+        <img src="images/dhcp6.png" class="image-sae">
+
+        <h3>🔹 Ce que cette situation m’a appris</h3>
+
+        <ul class="liste-sae">
+            <li>Le fonctionnement d’un serveur DHCP sous Linux ;</li>
+            <li>L’importance des fichiers de configuration réseau ;</li>
+            <li>L’utilisation des services Linux avec systemctl ;</li>
+            <li>Les méthodes de diagnostic d’un problème d’attribution IP ;</li>
+            <li>L’importance des interfaces réseau dans les services DHCP.</li>
+        </ul>
+
+    </div>
+
+    <!-- APACHE -->
+
+    <div class="bloc-sae">
+
+        <h2>Problème 2 — Le serveur Apache était inaccessible depuis le réseau</h2>
+
+        <h3>🔹 Introduction</h3>
+
+        <p>
+            Dans le cadre de la SAE12, j’ai installé et configuré un serveur web Apache sur une machine Debian afin d’héberger un service HTTP accessible depuis le réseau local.
+        </p>
+
+        <p>
+            Après l’installation du service, plusieurs tests ont été réalisés afin de vérifier l’accessibilité du serveur depuis une machine cliente.
+        </p>
+
+        <h3>🔹 Apparition du problème</h3>
+
+        <p>
+            Le serveur Apache fonctionnait correctement en local sur la machine Debian.
+            Cependant, les postes clients du réseau ne parvenaient pas à accéder au site web hébergé.
+        </p>
+
+        <p>
+            Depuis le poste client, l’accès à :
+        </p>
+
+        <div class="commande">
+            http://192.168.1.62
+        </div>
+
+        <p>
+            échouait et la page web ne s’affichait pas.
+        </p>
+
+        <p class="figure">
+            Figure 1 — Échec d’accès au serveur Apache depuis le poste client.
+        </p>
+
+        <img src="images/apache1.png" class="image-sae">
+
+        <h3>🔹 Analyse du problème</h3>
+
+        <p>
+            Après plusieurs vérifications réseau, j’ai constaté que le service Apache écoutait uniquement sur l’interface locale (127.0.0.1), ce qui empêchait les connexions provenant des autres machines du réseau.
+        </p>
+
+        <p>
+            Le problème ne provenait donc pas du client ni du réseau IP, mais de la configuration du serveur web Apache.
+        </p>
+
+        <h3>🔹 Résolution du problème</h3>
+
+        <p>
+            Pour corriger cette erreur, j’ai modifié la configuration d’écoute du serveur Apache afin qu’il accepte les connexions provenant du réseau local.
+        </p>
+
+        <p>
+            J’ai vérifié le fichier de configuration :
+        </p>
+
+        <div class="commande">
+            sudo nano /etc/apache2/ports.conf
+        </div>
+
+        <p>
+            La correction consistait à supprimer l’adresse 127.0.0.1.
+        </p>
+
+        <p>
+            Après modification de la configuration et redémarrage du service Apache :
+        </p>
+
+        <div class="commande">
+            sudo systemctl restart apache2
+        </div>
+
+        <p>
+            Le site web est devenu accessible depuis les autres machines du réseau.
+        </p>
+
+        <p class="figure">
+            Figure 2 — Accès réussi au serveur Apache après correction.
+        </p>
+
+        <img src="images/apache2.png" class="image-sae">
+
+        <h3>🔹 Ce que cette situation m’a appris</h3>
+
+        <ul class="liste-sae">
+            <li>Le fonctionnement d’un serveur web Apache ;</li>
+            <li>Les mécanismes d’écoute réseau sous Linux ;</li>
+            <li>Les tests client/serveur ;</li>
+            <li>Les méthodes de diagnostic d’accessibilité réseau ;</li>
+            <li>L’importance des paramètres réseau dans les services web.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+</body>
+</html>
