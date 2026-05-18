@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAÉ14</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-sae">
+
+<header>
+
+<nav class="navbar">
+
+<h1 class="logo">Portfolio</h1>
+
+<ul class="nav-links">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="index.html#presentation">Présentation</a></li>
+<li><a href="sae.html">Projets</a></li>
+<li><a href="index.html#competences">Bilan de compétences</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero-sae14">
+
+<div class="hero-content-sae14">
+<h1>SAÉ 1.04</h1>
+<p>Se présenter sur Internet</p>
+</div>
+
+</section>
+
+<section class="sae14-detail">
+
+<div class="bloc-sae14">
+
+<h2>Problème 1 — Une image ne s’affichait pas sur le site web</h2>
+
+<h3>Introduction</h3>
+
+<p>
+Dans le cadre de la SAÉ14, j’ai développé un site web présentant plusieurs aspects culturels et touristiques de la Tunisie.
+Le projet comportait plusieurs pages HTML ainsi qu’un grand nombre d’images utilisées pour illustrer les différentes destinations et spécialités tunisiennes.
+</p>
+
+<p>
+Lors des tests du site web, j’ai rencontré un problème d’affichage concernant certaines images du projet.
+</p>
+
+<h3>Apparition du problème</h3>
+
+<p>
+Après avoir intégré une image dans une page HTML, celle-ci ne s’affichait pas correctement dans le navigateur.
+</p>
+
+<p>
+À la place de l’image, le navigateur affichait une image cassée ou un espace vide.
+</p>
+
+<p class="figure">
+Figure 1 — Image absente sur la page web.
+</p>
+
+<img src="images/web1.png" class="image-sae14">
+
+<h3>Analyse du problème</h3>
+
+<p>
+Après analyse du code HTML, j’ai constaté qu’une erreur était présente dans le chemin de l’image utilisé dans la balise :
+</p>
+
+<div class="commande">
+&lt;img src="image_projet/couscouus.jpg"&gt;
+</div>
+
+<p>
+Le nom du fichier indiqué dans le code ne correspondait pas exactement au fichier présent dans le dossier du projet.
+</p>
+
+<p>
+Le problème provenait donc d’une erreur de chemin d’accès et non du navigateur ou du serveur web.
+</p>
+
+<h3>Résolution du problème</h3>
+
+<p>
+Pour corriger cette erreur, j’ai vérifié le contenu du dossier <strong>image_projet</strong> puis corrigé le nom du fichier dans le code HTML :
+</p>
+
+<div class="commande">
+&lt;img src="image_projet/couscous.jpg"&gt;
+</div>
+
+<p>
+Après cette correction, l’image s’est affichée correctement sur la page web.
+</p>
+
+<p class="figure">
+Figure 2 — Affichage correct de l’image après correction du chemin.
+</p>
+
+<img src="images/web2.png" class="image-sae14">
+
+</div>
+
+<div class="bloc-sae14">
+
+<h2>Problème 2 — Le fichier CSS ne se chargeait plus correctement</h2>
+
+<h3>Introduction</h3>
+
+<p>
+Afin d’améliorer l’apparence et l’ergonomie du site web, une feuille de style CSS commune a été utilisée pour personnaliser l’ensemble des pages du projet.
+</p>
+
+<p>
+Lors des tests du site web, j’ai rencontré un problème empêchant le chargement du style CSS sur une des pages du projet.
+</p>
+
+<h3>Apparition du problème</h3>
+
+<p>
+En ouvrant une page du site web dans le navigateur, les éléments HTML apparaissaient sans mise en forme.
+</p>
+
+<p>
+Les couleurs, les polices, les espacements et la mise en page n’étaient plus appliqués correctement.
+</p>
+
+<p class="figure">
+Figure 3 — Page web affichée sans style CSS.
+</p>
+
+<img src="images/css1.png" class="image-sae14">
+
+<h3>Analyse du problème</h3>
+
+<p>
+Après analyse du code HTML, j’ai constaté qu’une erreur était présente dans le lien vers la feuille de style CSS.
+</p>
+
+<p>
+Le fichier était appelé avec un mauvais nom dans la balise :
+</p>
+
+<div class="commande">
+&lt;link rel="stylesheet" href="styles.css"&gt;
+</div>
+
+<p>
+Alors que le fichier du projet s’appelait :
+</p>
+
+<div class="commande">
+style.css
+</div>
+
+<p>
+Le navigateur ne parvenait donc pas à charger la feuille de style du projet.
+</p>
+
+<h3>Résolution du problème</h3>
+
+<p>
+Pour corriger cette erreur, j’ai modifié le lien dans le fichier HTML afin d’utiliser le bon nom de fichier :
+</p>
+
+<div class="commande">
+&lt;link rel="stylesheet" href="style.css"&gt;
+</div>
+
+<p>
+Après cette correction, l’ensemble des styles CSS a été correctement appliqué à la page web.
+</p>
+
+<p class="figure">
+Figure 4 — Affichage correct de la page après chargement du CSS.
+</p>
+
+<img src="images/css2.png" class="image-sae14">
+
+</div>
+
+</section>
+
+</body>
+</html>
