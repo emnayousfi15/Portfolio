@@ -982,3 +982,21 @@ justify-content: space-between;
 
     box-shadow: 0 0 30px rgba(168,85,247,0.45);
 }
+
+/* AC */
+
+.liste-sae {
+    padding-left: 35px;
+
+    margin-top: 25px;
+}
+
+.liste-sae li {
+    font-size: 22px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+
+    color: #e5e5e5;
+}
