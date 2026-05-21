@@ -2,212 +2,276 @@
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SAÉ14</title>
+    <title>SAÉ14 - Portfolio RT</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
-<body class="page-sae">
+<body>
 
-<header>
+    <!-- NAVBAR -->
 
-<nav class="navbar">
+    <nav class="navbar">
 
-<h1 class="logo">Portfolio</h1>
+        <div class="logo">
+            Portfolio
+        </div>
 
-<ul class="nav-links">
-<li><a href="index.html">Accueil</a></li>
-<li><a href="index.html#presentation">Présentation</a></li>
-<li><a href="sae.html">Projets</a></li>
-<li><a href="index.html#competences">Bilan de compétences</a></li>
-<li><a href="index.html#contact">Contact</a></li>
-</ul>
+        <ul class="nav-links">
 
-</nav>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#">Présentation</a></li>
+            <li><a href="sae.html">Projets</a></li>
+            <li><a href="#">Bilan de compétences</a></li>
+            <li><a href="#">Contact</a></li>
 
-</header>
+        </ul>
 
-<section class="hero-sae14">
+    </nav>
 
-<div class="hero-content-sae14">
-<h1>SAÉ 1.04</h1>
-<p>Se présenter sur Internet</p>
-</div>
+    <!-- HEADER -->
+
+    <section class="project-header">
+
+        <div class="project-overlay"></div>
+
+        <img src="images/sae14.jpg" alt="SAE14">
+
+        <div class="project-header-content">
+
+            <h1>SAÉ 1.04</h1>
+
+            <p>
+                Se présenter sur Internet
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENU -->
+
+    <section class="project-content">
+
+        <!-- INTRODUCTION -->
+
+        <div class="content-box">
+
+            <h2>Introduction</h2>
+
+            <p>
+                Dans le cadre de la SAÉ 1.04 « Se présenter sur Internet »,
+                j’ai travaillé sur la création et l’organisation d’un site web
+                en HTML et CSS.
+            </p>
+
+            <p>
+                L’objectif était de comprendre la structure d’une page web,
+                d’utiliser les feuilles de style CSS et de créer une interface
+                moderne et responsive.
+            </p>
+
+        </div>
+
+        <!-- TRAVAIL REALISE -->
+
+        <div class="content-box">
+
+            <h2>Travail réalisé</h2>
+
+            <p>
+                Durant cette SAE, j’ai créé plusieurs pages web afin de présenter
+                différents projets et contenus liés au portfolio.
+            </p>
+
+            <p>
+                J’ai également travaillé sur :
+            </p>
+
+            <ul>
+
+                <li>La structure HTML des pages</li>
+
+                <li>La mise en forme avec CSS</li>
+
+                <li>L’organisation des fichiers et images</li>
+
+                <li>La création d’un design responsive</li>
+
+                <li>L’amélioration de l’apparence visuelle du site</li>
+
+            </ul>
+
+        </div>
+
+        <!-- PROBLEME -->
+
+        <div class="content-box">
+
+            <h2>Problème rencontré</h2>
+
+            <p>
+                Lors du développement du site web,
+                certaines ressources comme les images ou les fichiers CSS
+                ne s’affichaient plus correctement dans les pages.
+            </p>
+
+        </div>
+
+        <!-- ETAPE 1 -->
+
+        <div class="content-box">
+
+            <h2>Étape 1 — Analyse du problème</h2>
+
+            <p>
+                Après plusieurs vérifications,
+                j’ai constaté que certains chemins d’accès utilisés dans le HTML
+                étaient incorrects.
+            </p>
+
+            <div class="code-box">
+                <img src="images/web1.png" alt="">
+            </div>
+
+            <p>
+                Une erreur dans le nom du dossier ou du fichier empêchait
+                le chargement des ressources sur la page web.
+            </p>
+
+        </div>
+
+        <!-- ETAPE 2 -->
+
+        <div class="content-box">
+
+            <h2>Étape 2 — Correction des chemins</h2>
+
+            <p>
+                Afin de corriger ce problème,
+                j’ai modifié les chemins d’accès des images et fichiers CSS
+                dans les différentes pages HTML.
+            </p>
+
+            <p class="figure-text">
+                Figure 1 — Vérification et correction des chemins d’accès.
+            </p>
+
+            <img src="images/web2.png" class="project-image">
+
+        </div>
+
+        <!-- ETAPE 3 -->
+
+        <div class="content-box">
+
+            <h2>Étape 3 — Vérification du résultat</h2>
+
+            <p>
+                Après les corrections,
+                toutes les ressources se chargeaient correctement
+                et le site retrouvait son apparence normale.
+            </p>
+
+            <p class="figure-text">
+                Figure 2 — Affichage correct du site après correction.
+            </p>
+
+            <img src="images/css1.png" class="project-image">
+
+        </div>
+        <section class="bloc-sae">
+
+    <h2>Analyse du problème</h2>
+
+    <p>
+        Après analyse du code HTML, j’ai constaté qu’une erreur était présente dans le lien vers la feuille de style CSS.
+    </p>
+
+    <p>
+        Le fichier était appelé avec un mauvais nom dans la balise :
+    </p>
+
+    <div class="commande">
+        &lt;link rel="stylesheet" href="styles.css"&gt;
+    </div>
+
+    <p>
+        Alors que le fichier du projet s’appelait :
+    </p>
+
+    <div class="commande">
+        style.css
+    </div>
+
+    <p>
+        Le navigateur ne parvenait donc pas à charger la feuille de style du projet.
+    </p>
 
 </section>
 
-<section class="sae14-detail">
+<section class="bloc-sae">
 
-<div class="bloc-sae14">
+    <h2> Résolution du problème</h2>
 
-<h2>Problème 1 — Une image ne s’affichait pas sur le site web</h2>
+    <p>
+        Pour corriger cette erreur, j’ai modifié le lien dans le fichier HTML afin d’utiliser le bon nom de fichier :
+    </p>
 
-<h3>Introduction</h3>
+    <div class="commande">
+        &lt;link rel="stylesheet" href="style.css"&gt;
+    </div>
 
-<p>
-Dans le cadre de la SAÉ14, j’ai développé un site web présentant plusieurs aspects culturels et touristiques de la Tunisie.
-Le projet comportait plusieurs pages HTML ainsi qu’un grand nombre d’images utilisées pour illustrer les différentes destinations et spécialités tunisiennes.
-</p>
+    <p>
+        Après cette correction, l’ensemble des styles CSS a été correctement appliqué à la page web.
+    </p>
 
-<p>
-Lors des tests du site web, j’ai rencontré un problème d’affichage concernant certaines images du projet.
-</p>
+    <p class="figure">
+        Figure 2 — Affichage correct de la page après chargement du CSS.
+    </p>
 
-<h3>Apparition du problème</h3>
-
-<p>
-Après avoir intégré une image dans une page HTML, celle-ci ne s’affichait pas correctement dans le navigateur.
-</p>
-
-<p>
-À la place de l’image, le navigateur affichait une image cassée ou un espace vide.
-</p>
-
-<p class="figure">
-Figure 1 — Image absente sur la page web.
-</p>
-
-<img src="images/web1.png" class="image-sae14">
-
-<h3>Analyse du problème</h3>
-
-<p>
-Après analyse du code HTML, j’ai constaté qu’une erreur était présente dans le chemin de l’image utilisé dans la balise :
-</p>
-
-<div class="commande">
-&lt;img src="image_projet/couscouus.jpg"&gt;
-</div>
-
-<p>
-Le nom du fichier indiqué dans le code ne correspondait pas exactement au fichier présent dans le dossier du projet.
-</p>
-
-<p>
-Le problème provenait donc d’une erreur de chemin d’accès et non du navigateur ou du serveur web.
-</p>
-
-<h3>Résolution du problème</h3>
-
-<p>
-Pour corriger cette erreur, j’ai vérifié le contenu du dossier <strong>image_projet</strong> puis corrigé le nom du fichier dans le code HTML :
-</p>
-
-<div class="commande">
-&lt;img src="image_projet/couscous.jpg"&gt;
-</div>
-
-<p>
-Après cette correction, l’image s’est affichée correctement sur la page web.
-</p>
-
-<p class="figure">
-Figure 2 — Affichage correct de l’image après correction du chemin.
-</p>
-
-<img src="images/web2.png" class="image-sae14">
-
-</div>
-
-<div class="bloc-sae14">
-
-<h2>Problème 2 — Le fichier CSS ne se chargeait plus correctement</h2>
-
-<h3>Introduction</h3>
-
-<p>
-Afin d’améliorer l’apparence et l’ergonomie du site web, une feuille de style CSS commune a été utilisée pour personnaliser l’ensemble des pages du projet.
-</p>
-
-<p>
-Lors des tests du site web, j’ai rencontré un problème empêchant le chargement du style CSS sur une des pages du projet.
-</p>
-
-<h3>Apparition du problème</h3>
-
-<p>
-En ouvrant une page du site web dans le navigateur, les éléments HTML apparaissaient sans mise en forme.
-</p>
-
-<p>
-Les couleurs, les polices, les espacements et la mise en page n’étaient plus appliqués correctement.
-</p>
-
-<p class="figure">
-Figure 3 — Page web affichée sans style CSS.
-</p>
-
-<img src="images/css1.png" class="image-sae14">
-
-<h3>Analyse du problème</h3>
-
-<p>
-Après analyse du code HTML, j’ai constaté qu’une erreur était présente dans le lien vers la feuille de style CSS.
-</p>
-
-<p>
-Le fichier était appelé avec un mauvais nom dans la balise :
-</p>
-
-<div class="commande">
-&lt;link rel="stylesheet" href="styles.css"&gt;
-</div>
-
-<p>
-Alors que le fichier du projet s’appelait :
-</p>
-
-<div class="commande">
-style.css
-</div>
-
-<p>
-Le navigateur ne parvenait donc pas à charger la feuille de style du projet.
-</p>
-
-<h3>Résolution du problème</h3>
-
-<p>
-Pour corriger cette erreur, j’ai modifié le lien dans le fichier HTML afin d’utiliser le bon nom de fichier :
-</p>
-
-<div class="commande">
-&lt;link rel="stylesheet" href="style.css"&gt;
-</div>
-
-<p>
-Après cette correction, l’ensemble des styles CSS a été correctement appliqué à la page web.
-</p>
-
-<p class="figure">
-Figure 4 — Affichage correct de la page après chargement du CSS.
-</p>
-
-<img src="images/css2.png" class="image-sae14">
-
-</div>
-<div class="bloc-sae">
-
-<h2>Ce que cette situation m’a appris</h2>
-
-<p>
-<p>
-Cette SAE m’a permis de mieux comprendre les différentes étapes de création et de dépannage d’un site web en HTML et CSS.
-
-À travers les manipulations réalisées, j’ai appris à identifier l’origine d’un problème d’affichage, corriger des erreurs de structure ou de style et améliorer l’organisation des fichiers d’un projet web.
-
-Ce travail m’a également permis de développer mes compétences en intégration web, en mise en page responsive ainsi qu’en gestion des ressources comme les images, les feuilles de style CSS et les liens entre les différentes pages du site.
-</p>
-</p>
-
-</div>
+    <img src="images/css2.png"
+         alt="Correction CSS"
+         class="project-image">
 
 </section>
+
+        <!-- CE QUE JAI APPRIS -->
+
+        <div class="content-box">
+
+            <h2>Ce que cette situation m’a appris</h2>
+
+            <p>
+                Cette SAE m’a permis de découvrir différentes situations
+                liées au développement et à l’organisation d’un site web.
+            </p>
+
+            <p>
+                À travers ces manipulations,
+                j’ai appris à analyser un problème,
+                identifier son origine et appliquer une solution adaptée.
+            </p>
+
+            <p>
+                Ce travail m’a également permis de mieux comprendre
+                l’utilisation du HTML et du CSS,
+                l’organisation des fichiers
+                ainsi que l’importance des chemins d’accès dans un projet web.
+            </p>
+
+        </div>
+
+    </section>
 
 </body>
+
 </html>
-
-

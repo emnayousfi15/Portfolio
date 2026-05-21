@@ -956,3 +956,29 @@ justify-content: space-between;
 
     box-shadow: 0 0 30px rgba(168,85,247,0.45);
 }
+
+/* ========================= */
+/* SAE14 */
+/* ========================= */
+
+.project-image {
+
+    width: 75%;
+
+    display: block;
+
+    margin: 30px auto;
+
+    border-radius: 20px;
+
+    border: 2px solid rgba(255,255,255,0.08);
+
+    transition: 0.4s;
+}
+
+.project-image:hover {
+
+    transform: scale(1.01);
+
+    box-shadow: 0 0 30px rgba(168,85,247,0.45);
+}
