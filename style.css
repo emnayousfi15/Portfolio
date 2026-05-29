@@ -489,24 +489,6 @@ justify-content: space-between;
     line-height: 2;
 }
 
-.code-box {
-
-    background: #0a0a14;
-
-    border-left: 4px solid #a855f7;
-
-    padding: 20px;
-
-    margin: 25px 0;
-
-    border-radius: 15px;
-
-    color: #a855f7;
-
-    font-family: monospace;
-
-    overflow-x: auto;
-}
 
 .figure-text {
 
@@ -1112,13 +1094,11 @@ body{
 
 /* CODE */
 
-.code-box{
-    background:#111827;
-    padding:25px;
-    border-radius:15px;
-    margin:25px 0;
-    font-family:monospace;
-    overflow-x:auto;
+.code-box img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
 }
 
 /* IMAGES */
