@@ -1,0 +1,385 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+
+    background: #05010f;
+
+    color: white;
+}
+
+/* HEADER */
+
+header{
+
+    width: 100%;
+
+    padding: 25px 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    position: absolute;
+
+    z-index: 100;
+}
+
+.logo{
+
+    font-size: 2.5rem;
+
+    font-weight: 800;
+
+    color: #a855f7;
+
+    text-shadow: 0 0 20px #a855f7;
+}
+
+nav{
+
+    display: flex;
+
+    gap: 40px;
+}
+
+nav a{
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+nav a:hover{
+
+    color: #a855f7;
+}
+
+.active{
+
+    color: #a855f7;
+}
+
+/* HERO */
+
+.hero{
+
+    width: 100%;
+
+    height: 60vh;
+
+    background: url("images/contact.jpg") center/cover no-repeat;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.overlay{
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.75);
+}
+
+.hero-content{
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.hero-content h1{
+
+    font-size: 5rem;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+
+    width: 60%;
+
+    margin: auto;
+
+    font-size: 1.2rem;
+
+    color: #ddd;
+
+    line-height: 2;
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+
+    padding: 100px 10%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+}
+
+/* INFO */
+
+.contact-info{
+
+    background: rgba(255,255,255,0.05);
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+}
+
+.contact-info h2{
+
+    font-size: 2.5rem;
+
+    color: #a855f7;
+
+    margin-bottom: 40px;
+}
+
+.info-box{
+
+    margin-bottom: 35px;
+}
+
+.info-box h3{
+
+    margin-bottom: 10px;
+
+    font-size: 1.3rem;
+}
+
+.info-box p{
+
+    color: #ddd;
+
+    font-size: 1.05rem;
+}
+
+/* FORM */
+
+.contact-form{
+
+    background: rgba(255,255,255,0.05);
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+}
+
+.contact-form h2{
+
+    font-size: 2.5rem;
+
+    color: #a855f7;
+
+    margin-bottom: 40px;
+}
+
+form{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+input,
+textarea{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-size: 1rem;
+
+    outline: none;
+}
+
+textarea{
+
+    height: 180px;
+
+    resize: none;
+}
+
+button{
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg,#9333ea,#a855f7);
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover{
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 25px rgba(168,85,247,0.5);
+}
+
+/* SOCIAL */
+
+.social-section{
+
+    padding: 50px 10% 120px;
+}
+
+.social-section h2{
+
+    text-align: center;
+
+    font-size: 3rem;
+
+    color: #a855f7;
+
+    margin-bottom: 60px;
+}
+
+.social-container{
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 40px;
+}
+
+.social-box{
+
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition: 0.4s;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-box:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 0 30px rgba(168,85,247,0.4);
+}
+
+.social-box h3{
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+
+    color: #a855f7;
+}
+
+.social-box p{
+
+    color: #ddd;
+
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+    header{
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    nav{
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero-content h1{
+
+        font-size: 3rem;
+    }
+
+    .hero-content p{
+
+        width: 90%;
+    }
+
+    .contact-section{
+
+        grid-template-columns: 1fr;
+    }
+
+}

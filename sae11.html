@@ -22,16 +22,16 @@
     <nav class="navbar">
 
         <div class="logo">
-            Portfolio
+            Portfolio R&T
         </div>
 
         <ul class="nav-links">
 
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="#">Présentation</a></li>
+            <li><a href="profil.html">Profil</a></li>
             <li><a href="sae.html">Projets</a></li>
-            <li><a href="#">Bilan de compétences</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="bilan.html">Bilan de compétences</a></li>
+            <li><a href="contact.html">Contact</a></li>
 
         </ul>
 
@@ -77,8 +77,36 @@
                 d’étudier les mécanismes de chiffrement et de mettre en place différentes
                 méthodes permettant de sécuriser un accès distant sur une machine Linux.
             </p>
+            <p>
+Ma contribution personnelle consistait à installer et configurer le service SSH sur Debian, analyser les problèmes de connexion et mettre en place différentes solutions afin de sécuriser l’accès distant.
+</p>
 
         </div>
+
+        <section class="bloc-sae">
+
+    <h2> Apprentissages Critiques (AC)</h2>
+
+    <ul class="liste-sae">
+
+        <li>
+            AC11.03 — Configurer les fonctions de base du réseau local
+        </li>
+
+        <li>
+            AC11.04 — Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation
+        </li>
+
+        <li>
+            AC11.05 — Identifier les dysfonctionnements du réseau local et savoir les signaler
+        </li>
+
+    </ul>
+    <p class="ac-explication">
+Ces apprentissages critiques ont été mobilisés durant cette SAE à travers la configuration du service SSH, l’analyse du problème de connexion et la sécurisation de l’accès distant sur une machine Linux.
+</p>
+
+</section>
 
         <!-- TRAVAIL REALISE -->
 
@@ -118,7 +146,7 @@
 
         <div class="content-box">
 
-            <h2>Problème rencontré</h2>
+            <h2>Preuve 1 — problème de sécurité de port 22 SSH </h2>
 
             <p>
                 Après avoir installé et testé le serveur OpenSSH,
@@ -132,7 +160,7 @@
 
         <div class="content-box">
 
-            <h2>Étape 1 — Modification du port SSH</h2>
+            <h2>Etape 1 — Modification du port SSH</h2>
 
             <p>
                 Pour commencer, j’ai ouvert le fichier de configuration du service SSH :
@@ -178,7 +206,7 @@ Figure 1.1 — Configuration SSH après modification du port dans le fichier ssh
 
         <div class="content-box">
 
-            <h2>Étape 2 — Redémarrage du service SSH</h2>
+            <h2>Etape 2 — Redémarrage du service SSH</h2>
 
             <p>
                 Après avoir enregistré les modifications du fichier de configuration,
@@ -264,51 +292,30 @@ Figure 1.1 — Configuration SSH après modification du port dans le fichier ssh
                  l’utilisateur pour établir la connexion SSH.</p>
 
         </div>
-
-        <section class="bloc-sae">
-
-    <h2> Apprentissages Critiques (AC)</h2>
-
-    <ul class="liste-sae">
-
-        <li>
-            AC11.03 — Configurer les fonctions de base du réseau local
-        </li>
-
-        <li>
-            AC11.04 — Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation
-        </li>
-
-        <li>
-            AC11.05 — Identifier les dysfonctionnements du réseau local et savoir les signaler
-        </li>
-
-    </ul>
-
-</section>
+      
 
         <!-- CE QUE JAI APPRIS -->
 
         <div class="content-box">
 
-            <h2>Ce que cette situation m’a appris</h2>
+            <h2> Autoévaluation</h2>
 
-            <ul>
+           
 
-                <li>Le fonctionnement des ports réseau</li>
+                <p>
+Cette SAÉ m’a permis de mieux comprendre le fonctionnement du protocole SSH et l’importance de la sécurisation des accès distants sur un système Linux.
+</p>
 
-                <li>La configuration du service SSH</li>
+<p>
+À travers cette manipulation, j’ai appris à modifier un service réseau, analyser un problème de connexion et identifier l’origine d’un dysfonctionnement après un changement de configuration.
+</p>
 
-                <li>L’impact d’un changement de configuration</li>
+<p>
+Ce travail m’a également permis de développer ma capacité à résoudre un problème de manière méthodique, tout en appliquant des bonnes pratiques de cybersécurité pour sécuriser un accès distant.
+</p>
 
-                <li>Les bonnes pratiques de sécurisation SSH</li>
-
-                <li>L’analyse et la résolution d’erreurs réseau</li>
-
-            </ul>
-
-        </div>
-
+            
+    
     </section>
 
 </body>

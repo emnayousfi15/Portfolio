@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 1.05</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <header class="hero sae15-hero">
+
+        <nav class="navbar">
+
+            <div class="logo">
+            Portfolio R&T
+        </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="sae.html">Projets</a></li>
+                <li><a href="bilan.html">Bilan de compétences</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+
+     <section class="project-header">
+
+        <div class="project-overlay"></div>
+
+        <img src="images/sae15.jpg" alt="SAE15">
+
+        <div class="project-header-content">
+
+            <h1>SAÉ 1.05</h1>
+
+            <p>
+                Traiter des données
+            </p>
+
+        </div>
+
+</section>
+
+    </header>
+
+    <!-- CONTENU -->
+
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+
+        <section class="card">
+
+            <h2>Introduction</h2>
+
+            <p>
+                Dans le cadre de la SAÉ15, j’ai développé plusieurs scripts Python permettant
+                de récupérer des données OpenStreetMap via l’API Overpass afin de générer
+                automatiquement des fichiers HTML contenant des informations géographiques.
+            </p>
+
+            <p>
+                Lors des tests du programme, différents problèmes techniques empêchaient
+                le bon fonctionnement des scripts Python ainsi que la génération correcte
+                des pages HTML.
+            </p>
+
+        </section>
+
+          <!-- AC -->
+
+        <section class="card">
+
+            <h2>Apprentissages Critiques (AC)</h2>
+
+            <ul class="ac-list">
+                <li>AC13.01 — Utiliser un système informatique et ses outils</li>
+                <li>AC13.02 — Lire, exécuter, corriger et modifier un programme</li>
+                <li>AC13.03 — Traduire un algorithme dans un langage de programmation</li>
+                <li>AC13.06 — S’intégrer dans un environnement propice au développement et au travail collaboratif</li>
+            </ul>
+
+        </section>
+
+
+        <!-- PROBLEME 1 -->
+
+        <section class="card">
+
+            <h2>Preuve 1 — Les données OpenStreetMap ne s’affichaient plus</h2>
+
+            <h3>Apparition du problème</h3>
+
+            <p>Lors de l’exécution du script Python :</p>
+
+            <div class="code-box">
+                python infos_locales.py
+            </div>
+
+            <p>
+                le programme retournait une erreur et aucun fichier HTML n’était généré correctement.
+            </p>
+
+            <p class="figure">
+                Figure 1 — Erreur lors de la récupération des données Overpass API.
+            </p>
+
+            <img src="images/python1.png" alt="Erreur API">
+
+            <h3>Analyse du problème</h3>
+
+            <p>
+                Après analyse du script Python, j’ai constaté qu’une erreur était présente
+                dans l’URL utilisée pour contacter l’API Overpass.
+            </p>
+
+            <p>L’adresse :</p>
+
+            <div class="code-box">
+                https://overpass.kumi.systems/api/interpreter
+            </div>
+
+            <p>
+                avait été modifiée incorrectement, empêchant la communication avec le serveur OpenStreetMap.
+            </p>
+
+            <p>
+                Le problème provenait donc de la requête API et non du traitement des données Python.
+            </p>
+
+            <h3>Résolution du problème</h3>
+
+            <p>
+                Pour corriger cette erreur, j’ai restauré la bonne URL de l’API Overpass
+                dans le script Python.
+            </p>
+
+            <p>
+                Après correction, les données JSON ont été récupérées correctement et les
+                fichiers HTML ont été générés sans erreur.
+            </p>
+
+            <p class="figure">
+                Figure 2 — Génération correcte des données HTML après correction de l’URL API.
+            </p>
+
+            <img src="images/python2.png" alt="Correction API">
+
+        </section>
+
+        <!-- PROBLEME 2 -->
+
+        <section class="card">
+
+            <h2>Preuve 2 — Erreur lors de l’import du module Python markdown</h2>
+
+            <h3>Apparition du problème</h3>
+
+            <p>Lors de l’exécution du programme :</p>
+
+            <div class="code-box">
+                python infos_locales.py
+            </div>
+
+            <p>
+                une erreur Python apparaissait immédiatement dans le terminal :
+            </p>
+
+            <div class="code-box">
+                ModuleNotFoundError
+            </div>
+
+            <p>
+                Le programme s’arrêtait avant la génération des fichiers HTML.
+            </p>
+
+            <p class="figure">
+                 Figure 3 — Erreur d’import du module Python markdown.
+            </p>
+
+            <img src="images/python3.png" alt="Erreur markdown">
+
+            <h3>Analyse du problème</h3>
+
+            <p>
+                Après analyse du script Python, j’ai constaté que le projet utilisait
+                la bibliothèque :
+            </p>
+
+            <div class="code-box">
+                markdown
+            </div>
+
+            <p>
+                pour convertir des fichiers Markdown en HTML.
+            </p>
+
+            <p>
+                Cependant, cette bibliothèque n’était pas installée sur l’environnement
+                Python utilisé pour le projet.
+            </p>
+
+            <p>
+                Le problème provenait donc d’une dépendance Python manquante.
+            </p>
+
+            <h3>Résolution du problème</h3>
+
+            <p>
+                Pour corriger cette erreur, j’ai installé le module Python nécessaire
+                avec la commande suivante :
+            </p>
+
+            <div class="code-box">
+                pip install markdown
+            </div>
+
+            <p>
+                Après installation du module, le script Python a pu s’exécuter correctement
+                et les fichiers HTML ont été générés sans erreur.
+            </p>
+
+            <p class="figure">
+                 Figure 4 — Génération correcte des fichiers après installation du module.
+            </p>
+
+            <img src="images/python4.png" alt="Installation markdown">
+
+        </section>
+
+      
+        <!-- CONCLUSION -->
+
+        <section class="card">
+
+            <h2>Autoévaluation</h2>
+
+            <p>
+                Cette SAE m’a permis de mieux comprendre le fonctionnement d’un projet Python
+                utilisant des API et des bibliothèques externes.
+            </p>
+
+            <p>
+                À travers ces manipulations, j’ai appris à analyser des erreurs techniques,
+                identifier leur origine puis appliquer une solution adaptée afin de rétablir
+                le bon fonctionnement du programme.
+            </p>
+
+            <p>
+                Ce travail m’a également permis de progresser dans l’utilisation des modules Python,
+                la gestion des dépendances avec pip ainsi que la génération automatique de pages HTML.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

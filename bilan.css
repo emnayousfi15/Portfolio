@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #05010f;
+    color: white;
+}
+
+/* HEADER */
+
+header{
+    width: 100%;
+    padding: 25px 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 2.5rem;
+    font-weight: 800;
+
+    color: #a855f7;
+
+    text-shadow: 0 0 20px #a855f7;
+}
+
+nav{
+    display: flex;
+    gap: 40px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: #a855f7;
+}
+
+.active{
+    color: #a855f7;
+}
+
+/* HERO */
+
+.hero{
+    width: 100%;
+    height: 70vh;
+
+    background: url("images/bilan.jpg") center/cover no-repeat;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.7);
+}
+
+.hero-content{
+    position: relative;
+    text-align: center;
+
+    z-index: 2;
+}
+
+.hero-content h1{
+    font-size: 5rem;
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 1.3rem;
+    color: #ddd;
+
+    width: 70%;
+    margin: auto;
+}
+
+/* INTRO */
+
+.intro{
+    padding: 100px 10%;
+}
+
+.intro-box{
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 25px;
+
+    padding: 50px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 30px rgba(168,85,247,0.2);
+}
+
+.intro-box h2{
+    color: #a855f7;
+    font-size: 2.5rem;
+
+    margin-bottom: 30px;
+}
+
+.intro-box p{
+    font-size: 1.1rem;
+    line-height: 2;
+
+    color: #ddd;
+
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+
+.competences{
+    padding: 50px 10%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+}
+
+.card{
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.4s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+
+    box-shadow: 0 0 30px rgba(168,85,247,0.4);
+}
+
+.card h2{
+    color: #a855f7;
+
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+}
+
+.card p{
+    color: #ddd;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+/* SKILLS */
+
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.skills span{
+    background: #a855f7;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    font-weight: 500;
+}
+
+/* FORCES */
+
+.forces{
+    padding: 100px 10%;
+}
+
+.forces h2{
+    text-align: center;
+
+    font-size: 3rem;
+
+    color: #a855f7;
+
+    margin-bottom: 50px;
+}
+
+.forces-container{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 30px;
+}
+
+.force-box{
+    background: rgba(255,255,255,0.05);
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.force-box:hover{
+    transform: scale(1.05);
+
+    box-shadow: 0 0 25px rgba(168,85,247,0.4);
+}
+
+/* AXES */
+
+.axes{
+    padding: 50px 10%;
+}
+
+.axes-box{
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 25px;
+
+    padding: 50px;
+}
+
+.axes-box h2{
+    color: #a855f7;
+
+    margin-bottom: 30px;
+
+    font-size: 2.5rem;
+}
+
+.axes-box ul{
+    padding-left: 20px;
+}
+
+.axes-box li{
+    margin-bottom: 20px;
+
+    color: #ddd;
+
+    font-size: 1.1rem;
+}
+
+/* PROJET */
+
+.projet{
+    padding: 100px 10%;
+}
+
+.projet-box{
+    background: linear-gradient(135deg,#6d28d9,#9333ea);
+
+    padding: 60px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 0 40px rgba(168,85,247,0.5);
+}
+
+.projet-box h2{
+    font-size: 3rem;
+
+    margin-bottom: 30px;
+}
+
+.projet-box p{
+    font-size: 1.2rem;
+
+    line-height: 2;
+
+    width: 80%;
+
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    nav{
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1{
+        font-size: 3rem;
+    }
+
+    .hero-content p{
+        width: 90%;
+    }
+
+    .projet-box p{
+        width: 100%;
+    }
+
+}
