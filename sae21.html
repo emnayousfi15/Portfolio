@@ -66,13 +66,6 @@
 
     <div class="project-overlay"></div>
 
-    <!--
-        IMAGE DU HEADER
-
-        À placer dans :
-        images/sae21.jpg
-    -->
-
     <img
         src="images/sae21.jpg"
         alt="SAÉ21 - Construction d'un réseau informatique"
@@ -92,7 +85,7 @@
 
 
 <!-- ========================================================= -->
-<!-- CONTENU DU PROJET -->
+<!-- CONTENU -->
 <!-- ========================================================= -->
 
 <section class="project-content">
@@ -109,21 +102,28 @@
         <p>
             Dans le cadre de la SAÉ 2.01 « Construire un réseau informatique
             pour une petite structure », j'ai travaillé sur la mise en place
-            progressive d'un environnement réseau composé de plusieurs
-            machines virtuelles.
+            progressive d'une infrastructure réseau dans un environnement
+            virtualisé.
         </p>
 
         <p>
-            L'objectif de cette première étape était de préparer les machines
-            et de vérifier leur capacité à communiquer sur un même réseau
-            avant de poursuivre la configuration des services réseau et
-            l'administration du serveur.
+            L'objectif était de construire un environnement composé d'un
+            serveur et d'un poste client, de permettre leur communication,
+            puis de mettre en place des services permettant l'administration
+            du réseau.
         </p>
 
         <p>
-            J'ai utilisé VirtualBox afin de créer un environnement de travail
-            isolé. Une machine Windows Server 2022 a été utilisée comme serveur
-            et une seconde machine Windows comme poste client.
+            J'ai utilisé Oracle VirtualBox afin de créer un réseau interne
+            isolé. Le serveur utilise Windows Server 2022 et le poste client
+            utilise Windows.
+        </p>
+
+        <p>
+            Au cours de la réalisation, j'ai rencontré plusieurs difficultés.
+            Elles m'ont permis d'adopter une démarche de diagnostic,
+            d'identifier les causes des problèmes et de mettre en place
+            des solutions adaptées.
         </p>
 
     </div>
@@ -138,8 +138,8 @@
         <h2>Apprentissages critiques</h2>
 
         <p>
-            Cette première situation m'a principalement permis de travailler
-            les apprentissages critiques suivants :
+            Cette SAÉ m'a principalement permis de travailler les
+            apprentissages critiques suivants :
         </p>
 
         <ul class="liste-sae">
@@ -151,25 +151,26 @@
 
             <li>
                 <strong>AC11.04</strong> —
-                Maîtriser les rôles et les principes fondamentaux des systèmes
-                d'exploitation afin d'interagir avec ceux-ci pour la
-                configuration et l'administration des réseaux et services
-                fournis.
+                Maîtriser les rôles et les principes fondamentaux des
+                systèmes d'exploitation afin d'interagir avec ceux-ci
+                pour la configuration et l'administration des réseaux
+                et services fournis.
             </li>
 
             <li>
                 <strong>AC11.05</strong> —
-                Identifier les dysfonctionnements du réseau local et savoir
-                les signaler.
+                Identifier les dysfonctionnements du réseau local et
+                savoir les signaler.
             </li>
 
         </ul>
 
         <p class="ac-explication">
-            Ces apprentissages sont directement liés au descriptif de la
-            SAÉ 2.01, qui demande notamment de construire une architecture
-            réseau et de mettre en place une méthode permettant de tester
-            progressivement la configuration réalisée.
+            La réalisation de cette SAÉ m'a permis de mettre en pratique
+            ces apprentissages à travers la configuration d'un réseau
+            local, l'administration de Windows Server, la mise en place
+            d'Active Directory et de DNS ainsi que le diagnostic de
+            problèmes de communication réseau.
         </p>
 
     </div>
@@ -184,25 +185,23 @@
         <h2>Travail réalisé</h2>
 
         <p>
-            Pour commencer le projet, j'ai créé deux machines virtuelles
-            dans VirtualBox. La première machine utilise Windows Server 2022
-            et la seconde utilise Windows Client.
+            J'ai commencé par créer deux machines virtuelles dans
+            VirtualBox afin de construire un environnement de laboratoire.
         </p>
 
         <p>
-            Afin de permettre aux deux machines de communiquer sans les
-            mélanger avec le réseau réel, j'ai configuré leurs cartes réseau
-            sur un même réseau interne VirtualBox nommé
-            <strong>SAE21</strong>.
+            Les deux machines ont été placées sur un même réseau interne
+            VirtualBox nommé <strong>SAE21</strong>.
         </p>
 
 
-        <h3>Configuration du serveur</h3>
+        <h3>Serveur</h3>
 
         <ul class="liste-sae">
 
             <li>
-                Système : <strong>Windows Server 2022</strong>
+                Système :
+                <strong>Windows Server 2022</strong>
             </li>
 
             <li>
@@ -223,12 +222,13 @@
         </ul>
 
 
-        <h3>Configuration du client</h3>
+        <h3>Poste client</h3>
 
         <ul class="liste-sae">
 
             <li>
-                Système : <strong>Windows Client</strong>
+                Système :
+                <strong>Windows Client</strong>
             </li>
 
             <li>
@@ -248,38 +248,6 @@
 
         </ul>
 
-
-        <!-- ================================================= -->
-        <!-- CAPTURE SERVEUR -->
-        <!-- ================================================= -->
-
-        <img
-            src="images/sae21-probleme1-serveur-ip-erreur.png"
-            alt="Configuration initiale du serveur"
-            class="project-image"
-        >
-
-        <p class="figure-text">
-            Vérification de la configuration réseau du serveur avant la
-            résolution du problème.
-        </p>
-
-
-        <!-- ================================================= -->
-        <!-- CAPTURE CLIENT -->
-        <!-- ================================================= -->
-
-        <img
-            src="images/sae21-probleme1-client-ip-erreur.png"
-            alt="Configuration initiale du client"
-            class="project-image"
-        >
-
-        <p class="figure-text">
-            Vérification de la configuration réseau du poste client avant
-            la résolution du problème.
-        </p>
-
     </div>
 
 
@@ -297,29 +265,30 @@
         <h3>Situation</h3>
 
         <p>
-            Après avoir configuré les deux machines virtuelles sur le même
-            réseau interne, j'ai voulu vérifier leur communication avant
-            de continuer la configuration du serveur.
+            Après avoir créé les deux machines virtuelles et configuré
+            leurs adresses IP, j'ai voulu vérifier que le serveur et le
+            poste client pouvaient communiquer avant de poursuivre
+            la réalisation du projet.
         </p>
 
         <p>
-            Le serveur possédait l'adresse
+            Le serveur avait l'adresse
             <strong>192.168.50.10</strong> et le client l'adresse
             <strong>192.168.50.11</strong>.
         </p>
 
         <p>
-            Les deux machines utilisaient également le masque
-            <strong>255.255.255.0</strong>. Elles se trouvaient donc dans
-            le même réseau IPv4.
+            Les deux machines étaient configurées avec le masque
+            <strong>255.255.255.0</strong> et étaient connectées au
+            même réseau interne VirtualBox.
         </p>
 
 
         <h3>Le problème rencontré</h3>
 
         <p>
-            J'ai effectué un test de communication depuis le serveur vers
-            le client avec la commande :
+            J'ai effectué un test de communication avec la commande
+            <strong>ping</strong>.
         </p>
 
         <div class="code-box">
@@ -329,52 +298,16 @@
         </div>
 
         <p>
-            Malgré la configuration correcte des adresses IP, le serveur
-            ne recevait aucune réponse du client.
-        </p>
-
-        <p>
-            Le résultat affiché était :
-        </p>
-
-        <div class="code-box">
-
-            Délai d'attente de la demande dépassé.
-
-        </div>
-
-
-        <h3>Constat</h3>
-
-        <p>
-            Le problème ne semblait donc pas provenir directement de
-            l'adressage IP. Il fallait déterminer pourquoi les requêtes
-            de test n'étaient pas reçues par la machine distante.
-        </p>
-
-    </div>
-
-
-    <!-- ===================================================== -->
-    <!-- ANALYSE -->
-    <!-- ===================================================== -->
-
-    <div class="content-box">
-
-        <h2>Analyse du problème</h2>
-
-        <p>
-            Pour éviter de modifier plusieurs paramètres en même temps,
-            j'ai procédé par étapes afin d'identifier précisément l'origine
-            du dysfonctionnement.
+            Cependant, le serveur ne recevait aucune réponse du poste
+            client et le test indiquait un délai d'attente dépassé.
         </p>
 
 
-        <h3>1. Vérification de l'adressage IP</h3>
+        <h3>Premières vérifications</h3>
 
         <p>
-            J'ai commencé par utiliser la commande
-            <strong>ipconfig</strong> sur les deux machines.
+            J'ai commencé par vérifier la configuration IP des deux
+            machines à l'aide de la commande :
         </p>
 
         <div class="code-box">
@@ -384,90 +317,59 @@
         </div>
 
         <p>
-            La configuration était correcte :
-        </p>
-
-        <ul class="liste-sae">
-
-            <li>
-                Serveur :
-                <strong>192.168.50.10/24</strong>
-            </li>
-
-            <li>
-                Client :
-                <strong>192.168.50.11/24</strong>
-            </li>
-
-        </ul>
-
-        <p>
-            Les deux machines appartenaient donc au même réseau
-            <strong>192.168.50.0/24</strong>.
+            Les adresses IP étaient cohérentes et les deux machines
+            appartenaient au même réseau IPv4.
         </p>
 
 
-        <h3>2. Vérification de VirtualBox</h3>
+        <img
+            src="images/sae21-probleme1-serveur-ip-erreur.png"
+            alt="Configuration initiale du serveur"
+            class="project-image"
+        >
 
-        <p>
-            J'ai ensuite vérifié la configuration des cartes réseau
-            dans VirtualBox.
-        </p>
-
-        <p>
-            Les deux machines utilisaient le même réseau interne :
-            <strong>SAE21</strong>.
-        </p>
-
-        <p>
-            J'ai également vérifié que les cartes réseau virtuelles étaient
-            activées et que le câble virtuel était connecté.
+        <p class="figure-text">
+            Vérification de la configuration réseau initiale du serveur.
         </p>
 
 
-        <h3>3. Recherche de la cause</h3>
+        <img
+            src="images/sae21-probleme1-client-ip-erreur.png"
+            alt="Configuration initiale du client"
+            class="project-image"
+        >
 
-        <p>
-            Après ces vérifications, l'adressage et la configuration du
-            réseau virtuel étaient corrects. Le problème se situait donc
-            au niveau du système d'exploitation.
-        </p>
-
-        <p>
-            Les requêtes ICMP utilisées par la commande
-            <strong>ping</strong> étaient bloquées par le pare-feu Windows.
-        </p>
-
-        <p>
-            Le serveur et le client pouvaient donc être correctement
-            configurés sur le même réseau tout en refusant les requêtes
-            ICMP entrantes.
-        </p>
-
-    </div>
-
-
-    <!-- ===================================================== -->
-    <!-- RÉSOLUTION -->
-    <!-- ===================================================== -->
-
-    <div class="content-box">
-
-        <h2>Résolution du problème</h2>
-
-        <p>
-            Pour résoudre le problème, j'ai choisi de ne pas désactiver
-            complètement le pare-feu Windows. J'ai plutôt créé une règle
-            permettant uniquement les requêtes ICMPv4 nécessaires aux tests
-            de connectivité.
+        <p class="figure-text">
+            Vérification de la configuration réseau initiale du poste client.
         </p>
 
 
-        <h3>Création de la règle de pare-feu</h3>
+        <h3>Analyse</h3>
 
         <p>
-            Depuis PowerShell exécuté avec les droits administrateur,
-            j'ai utilisé la commande suivante :
+            La configuration des adresses IP étant correcte, j'ai ensuite
+            vérifié la configuration réseau des machines virtuelles dans
+            VirtualBox.
+        </p>
+
+        <p>
+            Les deux cartes réseau étaient connectées au même réseau interne
+            nommé <strong>SAE21</strong> et les câbles virtuels étaient
+            activés.
+        </p>
+
+        <p>
+            Le problème venait finalement du pare-feu Windows qui bloquait
+            les requêtes ICMP utilisées par la commande ping.
+        </p>
+
+
+        <h3>Résolution</h3>
+
+        <p>
+            Plutôt que de désactiver complètement le pare-feu, j'ai choisi
+            d'autoriser uniquement les requêtes ICMPv4 nécessaires aux
+            tests de connectivité.
         </p>
 
         <div class="code-box">
@@ -477,95 +379,406 @@
         </div>
 
         <p>
-            Cette règle autorise les requêtes ICMPv4 de type
-            <strong>Echo Request</strong> entrantes. Ce sont les requêtes
-            utilisées lorsqu'une machine effectue un <strong>ping</strong>.
+            Après la création de cette règle, j'ai effectué un nouveau
+            test de communication entre les deux machines.
         </p>
 
-
-        <h3>Nouvelle vérification</h3>
-
-        <p>
-            Après avoir appliqué la règle, j'ai relancé le test depuis le
-            serveur vers le client :
-        </p>
-
-        <div class="code-box">
-
-            ping 192.168.50.11
-
-        </div>
-
-        <p>
-            Cette fois, le serveur a reçu des réponses du client.
-            La communication entre les deux machines était maintenant
-            fonctionnelle.
-        </p>
-
-
-        <!-- ================================================= -->
-        <!-- CAPTURE SERVEUR APRÈS CORRECTION -->
-        <!-- ================================================= -->
 
         <img
             src="images/sae21-probleme1-serveur-ip-reussi.png"
-            alt="Communication réussie depuis le serveur"
+            alt="Configuration du serveur après résolution"
             class="project-image"
         >
 
         <p class="figure-text">
-            Vérification après la correction depuis le serveur.
+            Vérification du serveur après la résolution du problème.
         </p>
 
 
-        <!-- ================================================= -->
-        <!-- CAPTURE CLIENT APRÈS CORRECTION -->
-        <!-- ================================================= -->
-
         <img
             src="images/sae21-probleme1-client-ip-reussi.png"
-            alt="Communication réussie depuis le client"
+            alt="Configuration du client après résolution"
             class="project-image"
         >
 
         <p class="figure-text">
-            Vérification après la correction depuis le poste client.
+            Vérification du poste client après la résolution du problème.
+        </p>
+
+
+        <h3>Résultat</h3>
+
+        <p>
+            Après la modification du pare-feu, les deux machines ont pu
+            communiquer correctement. Le test de connectivité était
+            désormais fonctionnel.
+        </p>
+
+
+        <h3>Ce que j'ai appris</h3>
+
+        <p>
+            Cette première difficulté m'a permis de comprendre qu'une
+            configuration IP correcte ne garantit pas nécessairement
+            qu'une communication réseau sera possible.
+        </p>
+
+        <p>
+            J'ai appris à effectuer un diagnostic progressivement :
+            vérifier l'adressage, contrôler la configuration du réseau
+            virtuel, puis vérifier les mécanismes de filtrage du système
+            d'exploitation.
+        </p>
+
+        <p>
+            J'ai également compris qu'il est préférable d'appliquer une
+            correction ciblée plutôt que de désactiver complètement
+            un mécanisme de sécurité.
         </p>
 
     </div>
 
 
     <!-- ===================================================== -->
-    <!-- CE QUE J'AI APPRIS -->
+    <!-- PROBLÈME 2 -->
     <!-- ===================================================== -->
 
     <div class="content-box">
 
-        <h2>Ce que cette situation m'a appris</h2>
+        <h2>
+            Problème 2 — Impossible de rejoindre le domaine Active Directory
+        </h2>
+
+
+        <h3>Situation</h3>
 
         <p>
-            Cette première difficulté m'a permis de comprendre qu'une
-            configuration IP correcte ne garantit pas nécessairement qu'une
-            communication réseau sera possible.
+            Une fois la communication réseau établie, j'ai poursuivi la
+            configuration du serveur afin de mettre en place un domaine
+            Active Directory.
         </p>
 
         <p>
-            J'ai appris à distinguer plusieurs niveaux de diagnostic :
-            l'adressage IP, la configuration du réseau virtuel et les
-            règles de filtrage du système d'exploitation.
+            Sur Windows Server 2022, j'ai installé le rôle
+            <strong>Services AD DS</strong>, puis j'ai promu le serveur
+            en contrôleur de domaine.
         </p>
 
         <p>
-            J'ai également compris qu'il est préférable d'identifier
-            précisément la cause d'un problème plutôt que de désactiver
-            complètement un mécanisme de sécurité.
+            J'ai créé une nouvelle forêt avec le domaine :
+        </p>
+
+        <div class="code-box">
+
+            sae21.local
+
+        </div>
+
+        <p>
+            Le serveur assurait également le rôle de serveur DNS pour
+            le domaine.
+        </p>
+
+
+        <h3>Préparation du poste client</h3>
+
+        <p>
+            Le poste client possédait l'adresse IP
+            <strong>192.168.50.11</strong>.
         </p>
 
         <p>
-            Cette situation m'a donc permis d'adopter une démarche plus
-            méthodique : observer le problème, vérifier les différentes
-            hypothèses, identifier la cause, appliquer une correction
-            ciblée puis vérifier le résultat.
+            Pour provoquer une situation de diagnostic, j'ai configuré
+            temporairement le serveur DNS du client avec l'adresse
+            publique :
+        </p>
+
+        <div class="code-box">
+
+            8.8.8.8
+
+        </div>
+
+        <p>
+            L'objectif était ensuite de vérifier si le poste client
+            pouvait trouver et rejoindre le domaine
+            <strong>sae21.local</strong>.
+        </p>
+
+
+        <h3>Le problème rencontré</h3>
+
+        <p>
+            J'ai essayé d'intégrer le poste client au domaine
+            <strong>sae21.local</strong>.
+        </p>
+
+        <p>
+            Windows n'a pas réussi à contacter un contrôleur de domaine
+            Active Directory.
+        </p>
+
+
+        <img
+            src="images/sae21-probleme2-domaine-erreur.png"
+            alt="Erreur lors de la connexion au domaine"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Échec de l'intégration du poste client au domaine
+            sae21.local.
+        </p>
+
+
+        <h3>Analyse du problème</h3>
+
+        <p>
+            L'adresse IP du client était correcte et la communication
+            réseau entre les deux machines fonctionnait déjà.
+        </p>
+
+        <p>
+            J'ai donc cherché à vérifier la résolution DNS du domaine.
+            Pour cela, j'ai utilisé la commande :
+        </p>
+
+        <div class="code-box">
+
+            ipconfig /all
+
+        </div>
+
+        <p>
+            Cette commande m'a permis de constater que le poste client
+            utilisait <strong>8.8.8.8</strong> comme serveur DNS.
+        </p>
+
+
+        <img
+            src="images/sae21-probleme2-diagnostic-dns.png"
+            alt="Diagnostic de la configuration DNS"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Diagnostic montrant l'utilisation de 8.8.8.8 comme serveur DNS
+            sur le poste client.
+        </p>
+
+
+        <p>
+            J'ai ensuite utilisé :
+        </p>
+
+        <div class="code-box">
+
+            nslookup sae21.local
+
+        </div>
+
+        <p>
+            Le domaine interne n'était pas correctement résolu par le
+            serveur DNS utilisé par le client.
+        </p>
+
+        <p>
+            J'ai compris que le poste client devait utiliser le serveur
+            DNS associé au domaine Active Directory plutôt qu'un serveur
+            DNS public.
+        </p>
+
+
+        <h3>Résolution du problème</h3>
+
+        <p>
+            J'ai modifié la configuration IPv4 du poste client afin
+            d'utiliser le serveur Windows Server 2022 comme serveur DNS.
+        </p>
+
+        <p>
+            L'adresse du serveur DNS a donc été remplacée par :
+        </p>
+
+        <div class="code-box">
+
+            192.168.50.10
+
+        </div>
+
+
+        <img
+            src="images/sae21-probleme2-dns-corrige.png"
+            alt="Configuration DNS corrigée"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Configuration corrigée du poste client avec le serveur DNS
+            du domaine.
+        </p>
+
+
+        <h3>Vérification de la résolution DNS</h3>
+
+        <p>
+            Après la modification, j'ai vidé le cache DNS du client avec :
+        </p>
+
+        <div class="code-box">
+
+            ipconfig /flushdns
+
+        </div>
+
+        <p>
+            J'ai ensuite effectué une nouvelle recherche DNS :
+        </p>
+
+        <div class="code-box">
+
+            nslookup sae21.local
+
+        </div>
+
+        <p>
+            Le domaine <strong>sae21.local</strong> a alors été résolu
+            vers l'adresse IP du serveur :
+        </p>
+
+        <div class="code-box">
+
+            192.168.50.10
+
+        </div>
+
+
+        <img
+            src="images/sae21-probleme2-dns-reussi.png"
+            alt="Résolution DNS réussie"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Vérification de la résolution du domaine sae21.local après
+            correction du serveur DNS.
+        </p>
+
+
+        <h3>Nouvelle tentative d'intégration</h3>
+
+        <p>
+            Après avoir corrigé la configuration DNS, j'ai effectué une
+            nouvelle tentative d'intégration du poste client au domaine
+            <strong>sae21.local</strong>.
+        </p>
+
+        <p>
+            Cette fois, Windows a réussi à contacter le contrôleur de
+            domaine et a demandé les identifiants d'un compte autorisé
+            à rejoindre le domaine.
+        </p>
+
+        <p>
+            J'ai utilisé le compte administrateur du domaine afin
+            d'autoriser l'intégration du poste.
+        </p>
+
+
+        <h3>Résultat</h3>
+
+        <p>
+            L'intégration a finalement réussi et Windows a affiché le
+            message :
+        </p>
+
+        <div class="code-box">
+
+            Bienvenue dans le domaine sae21.local.
+
+        </div>
+
+
+        <img
+            src="images/sae21-probleme2-domaine-reussi.png"
+            alt="Intégration réussie au domaine Active Directory"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Intégration réussie du poste client au domaine sae21.local.
+        </p>
+
+
+        <h3>Ce que j'ai appris</h3>
+
+        <p>
+            Cette situation m'a permis de comprendre le rôle essentiel
+            du DNS dans une infrastructure Active Directory.
+        </p>
+
+        <p>
+            J'ai compris qu'un poste client peut être correctement
+            configuré au niveau IP et communiquer avec un serveur sans
+            pour autant réussir à rejoindre un domaine Active Directory.
+        </p>
+
+        <p>
+            Pour qu'un domaine soit trouvé correctement, le poste client
+            doit utiliser le serveur DNS capable de résoudre les noms
+            associés au domaine Active Directory.
+        </p>
+
+        <p>
+            Cette expérience m'a également appris à utiliser
+            <strong>ipconfig /all</strong> et <strong>nslookup</strong>
+            pour identifier un problème de résolution de noms.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- BILAN DES DEUX PROBLÈMES -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Bilan des situations rencontrées</h2>
+
+        <p>
+            Les deux problèmes rencontrés m'ont permis de suivre une
+            progression logique dans la construction de l'infrastructure.
+        </p>
+
+        <ul class="liste-sae">
+
+            <li>
+                <strong>Problème 1 :</strong>
+                diagnostiquer un problème de communication réseau et
+                identifier le blocage du trafic ICMP par le pare-feu.
+            </li>
+
+            <li>
+                <strong>Problème 2 :</strong>
+                diagnostiquer un problème d'intégration au domaine et
+                identifier une mauvaise configuration DNS.
+            </li>
+
+        </ul>
+
+        <p>
+            Ces deux situations m'ont montré qu'un réseau fonctionnel
+            nécessite plusieurs éléments complémentaires : un adressage
+            cohérent, une communication autorisée entre les machines,
+            une résolution DNS correcte et des services correctement
+            configurés.
+        </p>
+
+        <p>
+            J'ai également développé une méthode de travail basée sur
+            l'observation, les tests, l'analyse des résultats, la
+            correction puis la vérification finale.
         </p>
 
     </div>
@@ -586,22 +799,21 @@
             </li>
 
             <li>
-                Mettre en place un réseau interne entre plusieurs machines
-                virtuelles.
+                Créer un réseau interne avec VirtualBox.
             </li>
 
             <li>
-                Utiliser <strong>ipconfig</strong> pour vérifier une
-                configuration réseau.
+                Tester la connectivité avec la commande
+                <strong>ping</strong>.
             </li>
 
             <li>
-                Utiliser <strong>ping</strong> pour tester la connectivité
-                entre deux machines.
+                Vérifier une configuration réseau avec
+                <strong>ipconfig</strong>.
             </li>
 
             <li>
-                Identifier un problème de filtrage réseau lié au pare-feu
+                Diagnostiquer un problème de filtrage avec le pare-feu
                 Windows.
             </li>
 
@@ -610,7 +822,28 @@
             </li>
 
             <li>
-                Vérifier le fonctionnement du réseau après une modification.
+                Installer et configurer les Services AD DS.
+            </li>
+
+            <li>
+                Promouvoir un serveur Windows Server en contrôleur de domaine.
+            </li>
+
+            <li>
+                Comprendre le rôle du DNS dans Active Directory.
+            </li>
+
+            <li>
+                Utiliser <strong>nslookup</strong> pour diagnostiquer
+                une résolution DNS.
+            </li>
+
+            <li>
+                Intégrer un poste client à un domaine Active Directory.
+            </li>
+
+            <li>
+                Vérifier une configuration après correction.
             </li>
 
         </ul>
@@ -627,28 +860,38 @@
         <h2>Analyse réflexive</h2>
 
         <p>
-            Au début du diagnostic, je me suis concentré principalement
-            sur les adresses IP des deux machines. Cette vérification était
-            nécessaire, mais elle ne permettait pas à elle seule d'expliquer
-            le problème.
+            La réalisation de cette SAÉ m'a permis de comprendre que
+            l'administration réseau ne consiste pas uniquement à
+            configurer des adresses IP.
         </p>
 
         <p>
-            J'ai ensuite appris à élargir mon raisonnement en vérifiant
-            également la configuration du réseau virtuel et les mécanismes
-            de sécurité du système d'exploitation.
+            Lors du premier problème, j'ai appris à vérifier plusieurs
+            niveaux de fonctionnement avant de modifier la configuration.
+            Le réseau était correctement adressé, mais le pare-feu
+            empêchait les tests ICMP.
         </p>
 
         <p>
-            Cette situation m'a montré qu'en administration réseau, il est
-            important de procéder étape par étape et d'éviter de modifier
-            plusieurs paramètres simultanément.
+            Lors du deuxième problème, j'ai découvert l'importance du DNS
+            dans une infrastructure Active Directory. Même si le client
+            pouvait communiquer avec le serveur au niveau IP, il ne pouvait
+            pas localiser correctement le domaine lorsque son serveur DNS
+            était mal configuré.
         </p>
 
         <p>
-            Cette méthode permet de mieux comprendre l'origine d'un
-            dysfonctionnement et de vérifier que la solution appliquée
-            répond réellement au problème rencontré.
+            Ces situations m'ont permis d'améliorer ma méthode de diagnostic.
+            Je cherche maintenant à identifier précisément la couche ou
+            le service responsable du problème avant d'appliquer une
+            modification.
+        </p>
+
+        <p>
+            Je souhaite continuer à développer cette autonomie en
+            travaillant sur d'autres services réseau et en réalisant
+            davantage de configurations dans des environnements
+            virtualisés.
         </p>
 
     </div>
@@ -663,21 +906,28 @@
         <h2>Autoévaluation</h2>
 
         <p>
-            Je considère que cette première situation m'a permis de
-            renforcer mes bases en configuration réseau et en diagnostic.
+            Cette SAÉ m'a permis de renforcer mes compétences en
+            configuration réseau et en administration de systèmes
+            Windows.
         </p>
 
         <p>
-            Je suis maintenant capable de configurer une communication
-            réseau simple entre deux machines virtuelles, de vérifier leur
-            configuration IP et d'utiliser des outils de diagnostic comme
-            <strong>ping</strong> et <strong>ipconfig</strong>.
+            Je suis maintenant capable de mettre en place un environnement
+            réseau simple entre plusieurs machines virtuelles, de vérifier
+            leur connectivité et de rechercher l'origine d'un problème
+            réseau.
         </p>
 
         <p>
-            Je dois cependant continuer à pratiquer l'administration des
-            services Windows et l'analyse des règles de filtrage afin de
-            gagner progressivement en autonomie.
+            J'ai également acquis des premières compétences dans
+            l'administration d'Active Directory et dans la configuration
+            du DNS nécessaire au fonctionnement d'un domaine.
+        </p>
+
+        <p>
+            Je dois encore approfondir l'administration des services
+            Windows Server et les mécanismes d'Active Directory afin
+            d'être plus autonome face à des infrastructures plus complexes.
         </p>
 
     </div>
