@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAÉ21 - Portfolio R&T</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================= -->
+<!-- NAVIGATION -->
+<!-- ========================================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Portfolio R&T
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Accueil</a>
+        </li>
+
+        <li>
+            <a href="profil.html">Profil</a>
+        </li>
+
+        <li>
+            <a href="sae.html">Projets</a>
+        </li>
+
+        <li>
+            <a href="bilan.html">Bilan de compétences</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ========================================================= -->
+<!-- HEADER -->
+<!-- ========================================================= -->
+
+<section class="project-header">
+
+    <div class="project-overlay"></div>
+
+    <!--
+        IMAGE DU HEADER
+
+        À placer dans :
+        images/sae21.jpg
+    -->
+
+    <img
+        src="images/sae21.jpg"
+        alt="SAÉ21 - Construction d'un réseau informatique"
+    >
+
+    <div class="project-header-content">
+
+        <h1>SAÉ 2.01</h1>
+
+        <p>
+            Construire un réseau informatique pour une petite structure
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTENU DU PROJET -->
+<!-- ========================================================= -->
+
+<section class="project-content">
+
+
+    <!-- ===================================================== -->
+    <!-- INTRODUCTION -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Introduction</h2>
+
+        <p>
+            Dans le cadre de la SAÉ 2.01 « Construire un réseau informatique
+            pour une petite structure », j'ai travaillé sur la mise en place
+            progressive d'un environnement réseau composé de plusieurs
+            machines virtuelles.
+        </p>
+
+        <p>
+            L'objectif de cette première étape était de préparer les machines
+            et de vérifier leur capacité à communiquer sur un même réseau
+            avant de poursuivre la configuration des services réseau et
+            l'administration du serveur.
+        </p>
+
+        <p>
+            J'ai utilisé VirtualBox afin de créer un environnement de travail
+            isolé. Une machine Windows Server 2022 a été utilisée comme serveur
+            et une seconde machine Windows comme poste client.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- APPRENTISSAGES CRITIQUES -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Apprentissages critiques</h2>
+
+        <p>
+            Cette première situation m'a principalement permis de travailler
+            les apprentissages critiques suivants :
+        </p>
+
+        <ul class="liste-sae">
+
+            <li>
+                <strong>AC11.03</strong> —
+                Configurer les fonctions de base du réseau local.
+            </li>
+
+            <li>
+                <strong>AC11.04</strong> —
+                Maîtriser les rôles et les principes fondamentaux des systèmes
+                d'exploitation afin d'interagir avec ceux-ci pour la
+                configuration et l'administration des réseaux et services
+                fournis.
+            </li>
+
+            <li>
+                <strong>AC11.05</strong> —
+                Identifier les dysfonctionnements du réseau local et savoir
+                les signaler.
+            </li>
+
+        </ul>
+
+        <p class="ac-explication">
+            Ces apprentissages sont directement liés au descriptif de la
+            SAÉ 2.01, qui demande notamment de construire une architecture
+            réseau et de mettre en place une méthode permettant de tester
+            progressivement la configuration réalisée.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- TRAVAIL RÉALISÉ -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Travail réalisé</h2>
+
+        <p>
+            Pour commencer le projet, j'ai créé deux machines virtuelles
+            dans VirtualBox. La première machine utilise Windows Server 2022
+            et la seconde utilise Windows Client.
+        </p>
+
+        <p>
+            Afin de permettre aux deux machines de communiquer sans les
+            mélanger avec le réseau réel, j'ai configuré leurs cartes réseau
+            sur un même réseau interne VirtualBox nommé
+            <strong>SAE21</strong>.
+        </p>
+
+
+        <h3>Configuration du serveur</h3>
+
+        <ul class="liste-sae">
+
+            <li>
+                Système : <strong>Windows Server 2022</strong>
+            </li>
+
+            <li>
+                Adresse IPv4 :
+                <strong>192.168.50.10</strong>
+            </li>
+
+            <li>
+                Masque :
+                <strong>255.255.255.0</strong>
+            </li>
+
+            <li>
+                Réseau VirtualBox :
+                <strong>SAE21</strong>
+            </li>
+
+        </ul>
+
+
+        <h3>Configuration du client</h3>
+
+        <ul class="liste-sae">
+
+            <li>
+                Système : <strong>Windows Client</strong>
+            </li>
+
+            <li>
+                Adresse IPv4 :
+                <strong>192.168.50.11</strong>
+            </li>
+
+            <li>
+                Masque :
+                <strong>255.255.255.0</strong>
+            </li>
+
+            <li>
+                Réseau VirtualBox :
+                <strong>SAE21</strong>
+            </li>
+
+        </ul>
+
+
+        <!-- ================================================= -->
+        <!-- CAPTURE SERVEUR -->
+        <!-- ================================================= -->
+
+        <img
+            src="images/sae21-probleme1-serveur-ip-erreur.png"
+            alt="Configuration initiale du serveur"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Vérification de la configuration réseau du serveur avant la
+            résolution du problème.
+        </p>
+
+
+        <!-- ================================================= -->
+        <!-- CAPTURE CLIENT -->
+        <!-- ================================================= -->
+
+        <img
+            src="images/sae21-probleme1-client-ip-erreur.png"
+            alt="Configuration initiale du client"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Vérification de la configuration réseau du poste client avant
+            la résolution du problème.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- PROBLÈME 1 -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>
+            Problème 1 — Impossible de communiquer entre les deux machines
+        </h2>
+
+
+        <h3>Situation</h3>
+
+        <p>
+            Après avoir configuré les deux machines virtuelles sur le même
+            réseau interne, j'ai voulu vérifier leur communication avant
+            de continuer la configuration du serveur.
+        </p>
+
+        <p>
+            Le serveur possédait l'adresse
+            <strong>192.168.50.10</strong> et le client l'adresse
+            <strong>192.168.50.11</strong>.
+        </p>
+
+        <p>
+            Les deux machines utilisaient également le masque
+            <strong>255.255.255.0</strong>. Elles se trouvaient donc dans
+            le même réseau IPv4.
+        </p>
+
+
+        <h3>Le problème rencontré</h3>
+
+        <p>
+            J'ai effectué un test de communication depuis le serveur vers
+            le client avec la commande :
+        </p>
+
+        <div class="code-box">
+
+            ping 192.168.50.11
+
+        </div>
+
+        <p>
+            Malgré la configuration correcte des adresses IP, le serveur
+            ne recevait aucune réponse du client.
+        </p>
+
+        <p>
+            Le résultat affiché était :
+        </p>
+
+        <div class="code-box">
+
+            Délai d'attente de la demande dépassé.
+
+        </div>
+
+
+        <h3>Constat</h3>
+
+        <p>
+            Le problème ne semblait donc pas provenir directement de
+            l'adressage IP. Il fallait déterminer pourquoi les requêtes
+            de test n'étaient pas reçues par la machine distante.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- ANALYSE -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Analyse du problème</h2>
+
+        <p>
+            Pour éviter de modifier plusieurs paramètres en même temps,
+            j'ai procédé par étapes afin d'identifier précisément l'origine
+            du dysfonctionnement.
+        </p>
+
+
+        <h3>1. Vérification de l'adressage IP</h3>
+
+        <p>
+            J'ai commencé par utiliser la commande
+            <strong>ipconfig</strong> sur les deux machines.
+        </p>
+
+        <div class="code-box">
+
+            ipconfig
+
+        </div>
+
+        <p>
+            La configuration était correcte :
+        </p>
+
+        <ul class="liste-sae">
+
+            <li>
+                Serveur :
+                <strong>192.168.50.10/24</strong>
+            </li>
+
+            <li>
+                Client :
+                <strong>192.168.50.11/24</strong>
+            </li>
+
+        </ul>
+
+        <p>
+            Les deux machines appartenaient donc au même réseau
+            <strong>192.168.50.0/24</strong>.
+        </p>
+
+
+        <h3>2. Vérification de VirtualBox</h3>
+
+        <p>
+            J'ai ensuite vérifié la configuration des cartes réseau
+            dans VirtualBox.
+        </p>
+
+        <p>
+            Les deux machines utilisaient le même réseau interne :
+            <strong>SAE21</strong>.
+        </p>
+
+        <p>
+            J'ai également vérifié que les cartes réseau virtuelles étaient
+            activées et que le câble virtuel était connecté.
+        </p>
+
+
+        <h3>3. Recherche de la cause</h3>
+
+        <p>
+            Après ces vérifications, l'adressage et la configuration du
+            réseau virtuel étaient corrects. Le problème se situait donc
+            au niveau du système d'exploitation.
+        </p>
+
+        <p>
+            Les requêtes ICMP utilisées par la commande
+            <strong>ping</strong> étaient bloquées par le pare-feu Windows.
+        </p>
+
+        <p>
+            Le serveur et le client pouvaient donc être correctement
+            configurés sur le même réseau tout en refusant les requêtes
+            ICMP entrantes.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- RÉSOLUTION -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Résolution du problème</h2>
+
+        <p>
+            Pour résoudre le problème, j'ai choisi de ne pas désactiver
+            complètement le pare-feu Windows. J'ai plutôt créé une règle
+            permettant uniquement les requêtes ICMPv4 nécessaires aux tests
+            de connectivité.
+        </p>
+
+
+        <h3>Création de la règle de pare-feu</h3>
+
+        <p>
+            Depuis PowerShell exécuté avec les droits administrateur,
+            j'ai utilisé la commande suivante :
+        </p>
+
+        <div class="code-box">
+
+            New-NetFirewallRule -DisplayName "SAE21 - Autoriser ICMPv4" -Protocol ICMPv4 -IcmpType 8 -Direction Inbound -Action Allow
+
+        </div>
+
+        <p>
+            Cette règle autorise les requêtes ICMPv4 de type
+            <strong>Echo Request</strong> entrantes. Ce sont les requêtes
+            utilisées lorsqu'une machine effectue un <strong>ping</strong>.
+        </p>
+
+
+        <h3>Nouvelle vérification</h3>
+
+        <p>
+            Après avoir appliqué la règle, j'ai relancé le test depuis le
+            serveur vers le client :
+        </p>
+
+        <div class="code-box">
+
+            ping 192.168.50.11
+
+        </div>
+
+        <p>
+            Cette fois, le serveur a reçu des réponses du client.
+            La communication entre les deux machines était maintenant
+            fonctionnelle.
+        </p>
+
+
+        <!-- ================================================= -->
+        <!-- CAPTURE SERVEUR APRÈS CORRECTION -->
+        <!-- ================================================= -->
+
+        <img
+            src="images/sae21-probleme1-serveur-ip-reussi.png"
+            alt="Communication réussie depuis le serveur"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Vérification après la correction depuis le serveur.
+        </p>
+
+
+        <!-- ================================================= -->
+        <!-- CAPTURE CLIENT APRÈS CORRECTION -->
+        <!-- ================================================= -->
+
+        <img
+            src="images/sae21-probleme1-client-ip-reussi.png"
+            alt="Communication réussie depuis le client"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Vérification après la correction depuis le poste client.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- CE QUE J'AI APPRIS -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Ce que cette situation m'a appris</h2>
+
+        <p>
+            Cette première difficulté m'a permis de comprendre qu'une
+            configuration IP correcte ne garantit pas nécessairement qu'une
+            communication réseau sera possible.
+        </p>
+
+        <p>
+            J'ai appris à distinguer plusieurs niveaux de diagnostic :
+            l'adressage IP, la configuration du réseau virtuel et les
+            règles de filtrage du système d'exploitation.
+        </p>
+
+        <p>
+            J'ai également compris qu'il est préférable d'identifier
+            précisément la cause d'un problème plutôt que de désactiver
+            complètement un mécanisme de sécurité.
+        </p>
+
+        <p>
+            Cette situation m'a donc permis d'adopter une démarche plus
+            méthodique : observer le problème, vérifier les différentes
+            hypothèses, identifier la cause, appliquer une correction
+            ciblée puis vérifier le résultat.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- COMPÉTENCES DÉVELOPPÉES -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Compétence(s) développée(s)</h2>
+
+        <ul class="liste-sae">
+
+            <li>
+                Configurer une adresse IPv4 et un masque de sous-réseau.
+            </li>
+
+            <li>
+                Mettre en place un réseau interne entre plusieurs machines
+                virtuelles.
+            </li>
+
+            <li>
+                Utiliser <strong>ipconfig</strong> pour vérifier une
+                configuration réseau.
+            </li>
+
+            <li>
+                Utiliser <strong>ping</strong> pour tester la connectivité
+                entre deux machines.
+            </li>
+
+            <li>
+                Identifier un problème de filtrage réseau lié au pare-feu
+                Windows.
+            </li>
+
+            <li>
+                Créer une règle de pare-feu avec PowerShell.
+            </li>
+
+            <li>
+                Vérifier le fonctionnement du réseau après une modification.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- ANALYSE RÉFLEXIVE -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Analyse réflexive</h2>
+
+        <p>
+            Au début du diagnostic, je me suis concentré principalement
+            sur les adresses IP des deux machines. Cette vérification était
+            nécessaire, mais elle ne permettait pas à elle seule d'expliquer
+            le problème.
+        </p>
+
+        <p>
+            J'ai ensuite appris à élargir mon raisonnement en vérifiant
+            également la configuration du réseau virtuel et les mécanismes
+            de sécurité du système d'exploitation.
+        </p>
+
+        <p>
+            Cette situation m'a montré qu'en administration réseau, il est
+            important de procéder étape par étape et d'éviter de modifier
+            plusieurs paramètres simultanément.
+        </p>
+
+        <p>
+            Cette méthode permet de mieux comprendre l'origine d'un
+            dysfonctionnement et de vérifier que la solution appliquée
+            répond réellement au problème rencontré.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- AUTOÉVALUATION -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Autoévaluation</h2>
+
+        <p>
+            Je considère que cette première situation m'a permis de
+            renforcer mes bases en configuration réseau et en diagnostic.
+        </p>
+
+        <p>
+            Je suis maintenant capable de configurer une communication
+            réseau simple entre deux machines virtuelles, de vérifier leur
+            configuration IP et d'utiliser des outils de diagnostic comme
+            <strong>ping</strong> et <strong>ipconfig</strong>.
+        </p>
+
+        <p>
+            Je dois cependant continuer à pratiquer l'administration des
+            services Windows et l'analyse des règles de filtrage afin de
+            gagner progressivement en autonomie.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+</body>
+
+</html>
