@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAÉ23 - Portfolio R&T</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+<!-- NAVIGATION -->
+<!-- ========================================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Portfolio R&T
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Accueil</a>
+        </li>
+
+        <li>
+            <a href="profil.html">Profil</a>
+        </li>
+
+        <li>
+            <a href="sae.html">Projets</a>
+        </li>
+
+        <li>
+            <a href="bilan.html">Bilan de compétences</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ========================================================= -->
+<!-- HEADER -->
+<!-- ========================================================= -->
+
+<section class="project-header">
+
+    <div class="project-overlay"></div>
+
+    <img
+        src="images/sae23.jpg"
+        alt="SAÉ23 - Gestion de tickets d'un parc informatique"
+    >
+
+    <div class="project-header-content">
+
+        <h1>SAÉ 2.03</h1>
+
+        <p>
+            Gestion de tickets d'un parc informatique
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTENU -->
+<!-- ========================================================= -->
+
+<section class="project-content">
+
+
+    <!-- ===================================================== -->
+    <!-- INTRODUCTION -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Introduction</h2>
+
+        <p>
+            Dans le cadre de cette SAÉ, j'ai travaillé sur une application web
+            de gestion de tickets pour un parc informatique. L'application permet
+            aux utilisateurs de signaler un problème et de retrouver leur ticket
+            grâce à un identifiant unique appelé UID.
+        </p>
+
+        <p>
+            Le projet utilise PHP pour traiter les formulaires et MySQL pour
+            enregistrer les informations. J'ai notamment testé la création
+            et le suivi des tickets afin de vérifier le bon fonctionnement
+            de l'application.
+        </p>
+
+        <p>
+            Pendant les tests, j'ai étudié un problème lié à la vérification
+            de l'adresse e-mail lors du suivi d'un ticket. Cette situation
+            m'a permis de réfléchir à la protection des informations des utilisateurs.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- APPRENTISSAGES CRITIQUES -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Apprentissages critiques</h2>
+
+        <p>
+            Cette SAÉ m'a permis de travailler sur le développement d'une
+            application web, la gestion des données et la vérification
+            du fonctionnement d'un service.
+        </p>
+
+        <ul class="liste-sae">
+
+            <li>
+                <strong>Développement web :</strong>
+                comprendre le fonctionnement des formulaires et du traitement
+                des données avec PHP.
+            </li>
+
+            <li>
+                <strong>Gestion des données :</strong>
+                utiliser une base de données MySQL pour enregistrer et retrouver
+                les tickets.
+            </li>
+
+            <li>
+                <strong>Diagnostic :</strong>
+                observer un comportement incorrect, analyser son origine
+                et vérifier le résultat obtenu après une modification.
+            </li>
+
+        </ul>
+
+        <p class="ac-explication">
+            Les apprentissages critiques officiels devront être repris
+            selon les indications du sujet de la SAÉ.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- TRAVAIL RÉALISÉ -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Travail réalisé</h2>
+
+        <p>
+            J'ai utilisé XAMPP pour exécuter l'application en local avec PHP
+            et MySQL. J'ai testé la création d'un ticket, puis sa recherche
+            à partir de son UID et d'une adresse e-mail.
+        </p>
+
+        <p>
+            Pour réaliser les tests, j'ai utilisé un ticket dont l'UID était :
+            <strong>414E059037</strong>.
+        </p>
+
+        <p>
+            J'ai ensuite comparé le résultat obtenu avec une adresse e-mail
+            correcte et avec une adresse e-mail incorrecte.
+        </p>
+
+        <img
+            src="images/sae23-ticket-cree.png"
+            alt="Ticket de test créé dans l'application"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Ticket de test utilisé pour vérifier la fonction de suivi.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- PROBLÈME 1 -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>
+            Problème 1 — Le ticket s'affichait avec une adresse e-mail incorrecte
+        </h2>
+
+
+        <h3>Situation</h3>
+
+        <p>
+            Lors des tests de suivi, j'ai constaté qu'un ticket pouvait
+            s'afficher alors que l'adresse e-mail saisie était incorrecte.
+            Ce comportement représentait un risque pour la confidentialité
+            des informations enregistrées dans l'application.
+        </p>
+
+
+        <h3>Le problème rencontré</h3>
+
+        <p>
+            Le formulaire de suivi demandait l'UID du ticket et l'adresse
+            e-mail de l'utilisateur. Cependant, lors du test initial,
+            le ticket apparaissait même avec une adresse e-mail incorrecte.
+        </p>
+
+        <img
+            src="images/sae23-probleme1-avant.png"
+            alt="Ticket affiché malgré une adresse e-mail incorrecte"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Test initial : le ticket s'affiche malgré la saisie d'une adresse
+            e-mail incorrecte.
+        </p>
+
+
+        <h3>Analyse</h3>
+
+        <p>
+            Ce résultat indiquait que la vérification des informations
+            fournies pour retrouver le ticket ne fonctionnait pas comme attendu.
+            Une personne connaissant l'UID risquait ainsi d'accéder à des
+            informations qui ne lui étaient pas destinées.
+        </p>
+
+
+        <h3>Correction et principe de sécurité</h3>
+
+        <p>
+            Pour assurer un suivi sécurisé, l'application doit vérifier
+            simultanément l'UID du ticket et l'adresse e-mail associée
+            à son propriétaire. Si les deux informations ne correspondent
+            pas, les détails du ticket ne doivent pas être affichés.
+        </p>
+
+        <p>
+            La condition SQL attendue pour effectuer cette vérification est :
+        </p>
+
+        <div class="code-box">
+
+            WHERE t.uid_ticket = ? AND u.email_utilisateur = ?
+
+        </div>
+
+        <p>
+            Cette condition permet de rechercher un ticket à partir des deux
+            informations. Les valeurs doivent être transmises à l'aide
+            d'une requête préparée.
+        </p>
+
+        <img
+            src="images/sae23-probleme1-code.png"
+            alt="Fonction PHP vérifiant l'UID et l'adresse e-mail"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Code PHP utilisé pour vérifier l'UID du ticket et l'adresse e-mail.
+        </p>
+
+
+        <h3>Vérification avec une adresse incorrecte</h3>
+
+        <p>
+            J'ai effectué un nouveau test avec le même UID, mais en utilisant
+            une adresse e-mail incorrecte. L'application a affiché le message
+            « Aucun ticket trouvé avec ces informations. » sans présenter
+            les détails du ticket.
+        </p>
+
+        <img
+            src="images/sae23-probleme1-apres.png"
+            alt="Aucun ticket trouvé avec une adresse e-mail incorrecte"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Test avec une adresse e-mail incorrecte : le ticket n'est plus affiché.
+        </p>
+
+
+        <h3>Vérification avec la bonne adresse e-mail</h3>
+
+        <p>
+            J'ai également testé le suivi avec l'UID et l'adresse e-mail correcte.
+            Les informations du ticket se sont affichées normalement.
+            Ce test permet de vérifier que le suivi reste fonctionnel lorsque
+            les informations saisies sont correctes.
+        </p>
+
+        <img
+            src="images/sae23-probleme1-test-valide.png"
+            alt="Ticket retrouvé avec la bonne adresse e-mail"
+            class="project-image"
+        >
+
+        <p class="figure-text">
+            Test valide : le ticket est retrouvé avec l'UID et la bonne adresse e-mail.
+        </p>
+
+
+        <h3>Résultat</h3>
+
+        <p>
+            Les tests montrent que le suivi doit dépendre de la correspondance
+            entre l'UID et l'adresse e-mail. Avec les bonnes informations,
+            le ticket s'affiche. Avec une adresse incorrecte, l'application
+            ne doit pas retourner les détails du ticket.
+        </p>
+
+
+        <h3>Ce que j'ai appris</h3>
+
+        <p>
+            Cette situation m'a permis de comprendre qu'un identifiant unique
+            ne suffit pas à garantir la confidentialité d'un ticket.
+            Il est important de vérifier les informations associées à son
+            propriétaire avant d'afficher les données.
+        </p>
+
+        <p>
+            J'ai également compris l'intérêt des tests négatifs : ils permettent
+            de vérifier que l'application refuse les informations incorrectes,
+            en complément des tests réalisés avec des informations valides.
+        </p>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- BILAN -->
+    <!-- ===================================================== -->
+
+    <div class="content-box">
+
+        <h2>Bilan de la SAÉ</h2>
+
+        <p>
+            Ce travail m'a permis de tester une application web de gestion
+            de tickets et d'étudier un problème lié à la confidentialité
+            des données des utilisateurs.
+        </p>
+
+        <p>
+            La comparaison entre un suivi valide et un suivi avec une adresse
+            e-mail incorrecte montre l'importance de vérifier les informations
+            du demandeur avant d'afficher un ticket.
+        </p>
+
+        <p>
+            J'ai progressé dans la compréhension du code PHP, des requêtes SQL
+            et des tests fonctionnels. Cette expérience m'a aussi appris à
+            présenter un problème à partir d'observations, d'analyses et
+            de résultats vérifiables.
+        </p>
+
+    </div>
+
+
+</section>
+
+</body>
+</html>
