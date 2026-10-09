@@ -1144,10 +1144,10 @@ body{
     }
 }
     
-/* .code-image {
+.code-image {
     display: block;
     width: 85%;
     max-width: 850px;
     height: auto;
     margin: 25px auto;
-} */
+}
